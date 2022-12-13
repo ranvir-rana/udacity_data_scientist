@@ -1,6 +1,6 @@
 # Data Scientist Nanodegree
 # Introduction to data science
-## Project: Amsterdam airbnb listings Analysis 2019 
+## Project: Analysis of Airbnb Data from Boston and Seattle
 
 ### Installations
 
@@ -22,7 +22,7 @@ As per Udacity Data Scientist Nanodegree project Term 2 project to write a Data 
 
 This can can be modified to analyze other data sets other than amsterdam data.
 
-for more information refer to the medium blogpost for this project: https://medium.com/@nesreensada/this-is-why-an-amsterdam-airbnb-listing-is-expansive-593029aec0df.
+for more information refer to the medium blogpost for this project: https://medium.com/@ranvir_rana/in-depth-analysis-of-airbnb-data-from-boston-and-seattle-4489180ff612.
 
 ### summary of the project
 
@@ -62,14 +62,14 @@ The peak in prices occur in the period between May and June and the cheapest per
 
 ### Run
 
-In a terminal or command window, navigate to the top-level project directory `Write_BlogPost/` (that contains this README) and run one of the following commands:
+In a terminal or command window, navigate to the top-level project directory `Project 1 - Writing a Data Scientist Blog Post/` (that contains this README) and run one of the following commands:
 
 ```bash
-ipython notebook Amsterdam_Airbnb_Data_Analysis.ipynb
+ipython notebook In_depth_Analysis_of_Airbnb_Data_from_Boston_and_Seattle.ipynb
 ```  
 or
 ```bash
-jupyter Amsterdam_Airbnb_Data_Analysis.ipynb
+jupyter In_depth_Analysis_of_Airbnb_Data_from_Boston_and_Seattle.ipynb
 ```
 
 This will open the iPython Notebook software and project file in your browser.

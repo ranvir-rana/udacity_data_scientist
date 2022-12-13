@@ -61,13 +61,13 @@ This will open the iPython Notebook software and project file in your browser.
 
 The data used in this project was acquired from kaggle for Boston and Seattle city using the following [link1](https://www.kaggle.com/airbnb/seattle/data) & [link1](https://www.kaggle.com/airbnb/boston). 
 
-create a data directory containing the following required downloaded files from the above repo:
+Create a data directory containing the following required downloaded files from the above repo:
  - listings: detailed listings data for Boston and Seattle city and rename this file to listings_boston.csv & listings_seattle.csv.
  - calendar: detailed calendar data for Boston and Seattle city and rename this file to calendar_boston.csv & calendar_seattle.csv.
 
 ### Licensing, Authors, Acknowledgements 
 
-- data was acquired from insideairbnb [link1](https://www.kaggle.com/airbnb/seattle/data) & [link1](https://www.kaggle.com/airbnb/boston)
+- Data was acquired from Kaggle [link1](https://www.kaggle.com/airbnb/seattle/data) & [link1](https://www.kaggle.com/airbnb/boston)
 - This project is part of Data scientist Nanodegree from udacity 
 
 Please refer to [Udacity Terms of Service](https://www.udacity.com/legal) for further information.

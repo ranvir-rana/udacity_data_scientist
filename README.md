@@ -4,7 +4,7 @@ This repository contains the projects done while pursuing Udacity's Data Scienti
 
 Project 1: Writing a Data Scientist Blog Post
 
-Project 2: ....
+Project 2: Disaster Response Pipeline
 
 Project 3: ....
 

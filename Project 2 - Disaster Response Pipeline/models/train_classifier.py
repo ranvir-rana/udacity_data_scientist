@@ -9,21 +9,22 @@ from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
+from sklearn.ensemble import RandomForestClassifier,GradientBoostingClassifier
+from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer,TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 from sklearn.model_selection import GridSearchCV, RepeatedKFold, train_test_split
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.pipeline import Pipeline
+from sklearn.pipeline import Pipeline,FeatureUnion
 from sklearn.svm import LinearSVC
 from sqlalchemy import create_engine
+from joblib import parallel_backend
 
 nltk.download("punkt")
 nltk.download("stopwords")
-nltk.download("maxent_ne_chunker")
 nltk.download("wordnet")
+
 import warnings
 warnings.filterwarnings('always')
 
@@ -35,7 +36,7 @@ def load_data(database_filepath):
     """
     Loads a pandas DataFrame from a sqlite database
     
-	Args:
+    Args:
     database_filepath: path of the sqlite database
     Returns:
     X: features (data frame)
@@ -43,13 +44,13 @@ def load_data(database_filepath):
     """
     engine = create_engine("sqlite:///{}".format(database_filepath))
     df = pd.read_sql_table("disaster_categories_messages", engine)
-	
-	# As per the analysis, child_alone doesn't have any information, so lets drop it
+
+    # As per the analysis, child_alone doesn't have any information, so lets drop it
     df = df.drop(['child_alone'],axis=1)
-	
+
     X = df[['message']]
     Y = df.iloc[:, 4:]
-	
+
     return X, Y
 
 
@@ -57,7 +58,7 @@ def tokenize(text):
     """
     Tokenizes input text
     
-	Args:
+    Args:
     text: text data as str
     Returns:
     text: tokenized text
@@ -70,15 +71,6 @@ def tokenize(text):
     return text
 
 
-text_transformer = Pipeline(
-    [("vecttext", CountVectorizer(tokenizer=tokenize)), ("tfidf", TfidfTransformer())]
-)
-
-preprocessor = ColumnTransformer(
-    [("text", text_transformer, "message")], remainder="passthrough"
-)
-
-
 def build_model():
     """
     Creates a pipeline for model training including a GridSearchCV object.
@@ -86,42 +78,45 @@ def build_model():
     Returns:
     cv: GridSearchCV object
     """
-    pipeline = Pipeline(
-        [("preprocessor", preprocessor), ("clf", RandomForestClassifier())]
+    # Define individual models
+    rf_clf = MultiOutputClassifier(RandomForestClassifier(random_state=42))
+    gb_clf = MultiOutputClassifier(GradientBoostingClassifier(random_state=42))
+    sv_clf = MultiOutputClassifier(LinearSVC(random_state=42))
+    
+    # Define pipeline for text processing
+    text_transformer = TfidfVectorizer(tokenizer=tokenize)
+    preprocessor = ColumnTransformer(
+        [("text", text_transformer, "message")], remainder="passthrough"
     )
+    
+    # Create the final pipeline
+    pipeline = Pipeline([
+        ('preprocessor', preprocessor),
+        ('classifier', rf_clf)
+    ])
+    
+   # Initiaze the hyperparameters for each dictionary
+    param1 = {}
+    param1['classifier__estimator__n_estimators'] = [50, 100, 250]
+    param1['classifier__estimator__max_depth'] = [5, 8, 10]
+    param1['classifier'] = [rf_clf]
 
-    parameters = [
-        {
-            "clf": [RandomForestClassifier()],
-            "clf__n_estimators": [5, 50, 100, 250],
-            "clf__max_depth": [5, 8, 10],
-            "preprocessor__text__vecttext__ngram_range": [(1, 1), (1, 2)],
-            "clf__random_state": [42],
-        },
-        {
-            "clf": [MultiOutputClassifier(LinearSVC(max_iter=10000))],
-            "clf__estimator__C": [1.0, 10.0, 100.0, 1000.0],
-            "clf__estimator__max_iter": [5000],
-            "preprocessor__text__vecttext__ngram_range": [(1, 1), (1, 2)],
-            "clf__estimator__random_state": [42],
-        },
-        {
-            "clf": [MultiOutputClassifier(MultinomialNB())],
-            "preprocessor__text__vecttext__max_df": [0.5, 0.75, 1.0],
-            "preprocessor__text__vecttext__ngram_range": [(1, 1), (1, 2)],
-        },
-    ]
+    param2 = {}
+    param2['classifier__estimator__C'] = [0.1,1,10]
+    param2['classifier__estimator__loss'] = ['squared_hinge','hinge']
+    param2['classifier__estimator__max_iter'] = [1000,10000]
+    param2['classifier'] = [sv_clf]
 
-    cv = GridSearchCV(
-        pipeline,
-        parameters,
-        cv=2,
-        scoring='f1_micro',
-        n_jobs=-1,
-    )
-
+    param3 = {}
+    param3['classifier__estimator__n_estimators'] = [50, 100, 250]
+    param3['classifier__estimator__max_depth'] = [5, 8, 10]
+    param3['classifier__estimator__learning_rate'] = [0.1, 0.05, 0.01]
+    param3['classifier'] = [gb_clf]
+    
+    params = [param1, param2, param3]
+    
+    cv = GridSearchCV(pipeline, params, cv = 3, n_jobs = -1, scoring='f1_micro',verbose = 2)
     return cv
-
 
 def evaluate_model(model, X, Y):
     """
@@ -132,19 +127,16 @@ def evaluate_model(model, X, Y):
     X: feature data frame for test set evaluation
     Y: target data frame for test set evaluation
     """
-
-    df = pd.DataFrame.from_dict(model.cv_results_)
+    
     print("##### Cross-validation results on validation set #####")
-    print("Best score:{}".format(model.best_score_))
-    print("Best parameters set:{}".format(model.best_estimator_.get_params()["clf"]))
-    print("mean_test_f1_micro: {}".format(df["mean_test_f1_micro"]))
+    print("Best score: {}".format(model.best_score_))
+    best_params = model.best_estimator_.get_params()
+    print("Best parameters set: {}".format(best_params))
+
     print("##### Scoring on test set #####")
     preds = model.predict(X)
-    print(
-        "Test set classification report: {}".format(
-            classification_report(Y, preds, target_names=list(Y.columns))
-        )
-    )
+    report = classification_report(Y, preds, target_names=list(Y.columns))
+    print(f"Test set classification report: {report}")
 
 
 def save_model(model, model_filepath):

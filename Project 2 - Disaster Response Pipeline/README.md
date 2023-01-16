@@ -27,16 +27,16 @@ The project is divided into the following key sections:
         Project 2 - Disaster Response Pipeline
           |-- app
                 |-- templates
-                        |-- go.html
-                        |-- master.html
-                |-- run.py
+                        |-- go.html		# classification result page of web app
+                        |-- master.html		# main page of web app
+                |-- run.py			# Flask file that runs app
           |-- data
-                |-- disaster_message.csv
-                |-- disaster_categories.csv
-                |-- DisasterResponse.db
+                |-- disaster_message.csv	# data to process
+                |-- disaster_categories.csv	# data to process
+                |-- DisasterResponse.db		# database to save clean data to
                 |-- process_data.py
           |-- models
-                |-- classifier.pkl
+                |-- classifier.pkl		# saved model
                 |-- train_classifier.py
           |-- README
 ~~~~~~~

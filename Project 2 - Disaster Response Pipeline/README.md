@@ -10,7 +10,6 @@
 3. [Authors](#authors)
 4. [License](#license)
 5. [Acknowledgement](#acknowledgement)
-6. [Screenshots](#screenshots)
 
 <a name="descripton"></a>
 ## Description
@@ -75,3 +74,9 @@ In the data and models folder, you can find two Jupyter notebooks that will help
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+<a name="acknowledgement"></a>
+## Acknowledgements
+
+* [Udacity](https://www.udacity.com/) for providing an amazing Data Science Nanodegree Program
+* [Figure Eight](https://www.figure-eight.com/) for providing the relevant dataset to train the model

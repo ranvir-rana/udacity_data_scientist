@@ -160,7 +160,7 @@ def build_model():
     param3 = {}
     param3['features__text_pipeline__vect__ngram_range'] = ((1, 1), (1, 2))
     param3['classifier__estimator__hidden_layer_sizes'] = [
-        (50, 50, 50), (100, 100, 100)]
+        (50, 50, 50), (100, 100, 100), (150, 150, 150)]
     param3['classifier__estimator__solver'] = ['adam', 'sgd']
     param3['classifier__estimator__max_iter'] = [30000]
     param3['classifier'] = [mlp_clf]

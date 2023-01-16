@@ -62,6 +62,7 @@ git clone https://github.com/ranvir-rana/udacity_data_scientist.git
 ### Additional Material
 
 In the data and models folder, you can find two Jupyter notebooks that will help you understand how the model works step by step:
+
     * ETL Preparation Notebook: learn about the ETL pipeline implemented
     * ML Pipeline Preparation Notebook: examine the Machine Learning Pipeline developed with NLTK and Scikit-Learn.
 

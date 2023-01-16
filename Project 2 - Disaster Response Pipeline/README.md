@@ -14,13 +14,16 @@
 <a name="descripton"></a>
 ## Description
 
-This project is part of the Data Science Nanodegree program by Udacity in collaboration with Figure Eight. The goal is to build a Natural Language Processing (NLP) model to categorize messages from real-life disaster events in real-time. The dataset contains pre-labelled tweets and messages.
+This project is a part of the Data Science Nanodegree program by Udacity in collaboration with Figure Eight. The aim is to develop a Natural Language Processing (NLP) model that can classify messages from real-life disaster events in real-time. The dataset contains pre-labelled tweets and messages.
 
-The project is divided into the following key sections:
+The project is broken down into three key sections:
 
-    1. Processing data, building an ETL pipeline to extract, clean and store data in a SQLite DB.
-    2. Building a machine learning pipeline to train a model that can classify text messages in various categories.
-    3. Running a web app that displays model results in real-time.
+	1. Data processing, where an ETL pipeline is built to extract, clean, and store data in a SQLite database.
+	2. Building a machine learning pipeline to train a model capable of classifying text messages into various categories.
+	3. Developing a web application that displays the model's results in real-time.
+	
+This project is significant as it aims to assist disaster relief agencies in effectively responding to emergency situations. By providing a machine learning model that can classify disaster messages and direct them to the appropriate agency, this project can streamline the process of getting the right information to the right people quickly, which can save lives and reduce the impact of natural disasters on communities. Additionally, by providing data visualizations in the web app, the project can also help relief agencies gain valuable insights into the types and frequency of disasters that are occurring, which can inform their response strategies and improve their overall effectiveness. Overall, this application has the potential to make a meaningful impact on communities by helping disaster relief agencies respond more quickly and effectively to emergency situations.
+
 
 ### File Description
 ~~~~~~~

@@ -22,6 +22,25 @@ The project is divided into the following key sections:
     2. Building a machine learning pipeline to train a model that can classify text messages in various categories.
     3. Running a web app that displays model results in real-time.
 
+### File Description
+~~~~~~~
+        Project 2 - Disaster Response Pipeline
+          |-- app
+                |-- templates
+                        |-- go.html
+                        |-- master.html
+                |-- run.py
+          |-- data
+                |-- disaster_message.csv
+                |-- disaster_categories.csv
+                |-- DisasterResponse.db
+                |-- process_data.py
+          |-- models
+                |-- classifier.pkl
+                |-- train_classifier.py
+          |-- README
+~~~~~~~
+
 <a name="getting_started"></a>
 ## Getting Started
 

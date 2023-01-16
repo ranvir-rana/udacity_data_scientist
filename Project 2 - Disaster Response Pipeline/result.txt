@@ -1,13 +1,31 @@
 Evaluating model...
 ##### Cross-validation results on validation set #####
-Best score: 0.6771841513942475
-Best parameters set: {'memory': None, 'steps': [('preprocessor', ColumnTransformer(remainder='passthrough',
-                  transformers=[('text',
-                                 TfidfVectorizer(tokenizer=<function tokenize at 0x00000287ED796670>),
-                                 'message')])), ('classifier', MultiOutputClassifier(estimator=LinearSVC(C=1, loss='hinge', random_state=42)))], 'verbose': False, 'preprocessor': ColumnTransformer(remainder='passthrough',
-                  transformers=[('text',
-                                 TfidfVectorizer(tokenizer=<function tokenize at 0x00000287ED796670>),
-                                 'message')]), 'classifier': MultiOutputClassifier(estimator=LinearSVC(C=1, loss='hinge', random_state=42)), 'preprocessor__n_jobs': None, 'preprocessor__remainder': 'passthrough', 'preprocessor__sparse_threshold': 0.3, 'preprocessor__transformer_weights': None, 'preprocessor__transformers': [('text', TfidfVectorizer(tokenizer=<function tokenize at 0x00000287ED796670>), 'message')], 'preprocessor__verbose': False, 'preprocessor__verbose_feature_names_out': True, 'preprocessor__text': TfidfVectorizer(tokenizer=<function tokenize at 0x00000287ED796670>), 'preprocessor__text__analyzer': 'word', 'preprocessor__text__binary': False, 'preprocessor__text__decode_error': 'strict', 'preprocessor__text__dtype': <class 'numpy.float64'>, 'preprocessor__text__encoding': 'utf-8', 'preprocessor__text__input': 'content', 'preprocessor__text__lowercase': True, 'preprocessor__text__max_df': 1.0, 'preprocessor__text__max_features': None, 'preprocessor__text__min_df': 1, 'preprocessor__text__ngram_range': (1, 1), 'preprocessor__text__norm': 'l2', 'preprocessor__text__preprocessor': None, 'preprocessor__text__smooth_idf': True, 'preprocessor__text__stop_words': None, 'preprocessor__text__strip_accents': None, 'preprocessor__text__sublinear_tf': False, 'preprocessor__text__token_pattern': '(?u)\\b\\w\\w+\\b', 'preprocessor__text__tokenizer': <function tokenize at 0x00000287ED796670>, 'preprocessor__text__use_idf': True, 'preprocessor__text__vocabulary': None, 'classifier__estimator__C': 1, 'classifier__estimator__class_weight': None, 'classifier__estimator__dual': True, 'classifier__estimator__fit_intercept': True, 'classifier__estimator__intercept_scaling': 1, 'classifier__estimator__loss': 'hinge', 'classifier__estimator__max_iter': 1000, 'classifier__estimator__multi_class': 'ovr', 'classifier__estimator__penalty': 'l2', 'classifier__estimator__random_state': 42, 'classifier__estimator__tol': 0.0001, 'classifier__estimator__verbose': 0, 'classifier__estimator': LinearSVC(C=1, loss='hinge', random_state=42), 'classifier__n_jobs': None}
+Best score: 0.683760125591371
+Best parameters set: {'memory': None, 'steps': [('features', FeatureUnion(transformer_list=[('text_pipeline',
+                                Pipeline(steps=[('vect',
+                                                 CountVectorizer(ngram_range=(1,
+                                                                              2),
+                                                                 tokenizer=<function tokenize at 0x000002C5028FD9D0>)),
+                                                ('tfidf',
+                                                 TfidfTransformer())])),
+                               ('starting_verb', StartingVerbExtractor())])), ('classifier', MultiOutputClassifier(estimator=LinearSVC(C=1, loss='hinge', max_iter=30000,
+                                          random_state=42)))], 'verbose': False, 'features': FeatureUnion(transformer_list=[('text_pipeline',
+                                Pipeline(steps=[('vect',
+                                                 CountVectorizer(ngram_range=(1,
+                                                                              2),
+                                                                 tokenizer=<function tokenize at 0x000002C5028FD9D0>)),
+                                                ('tfidf',
+                                                 TfidfTransformer())])),
+                               ('starting_verb', StartingVerbExtractor())]), 'classifier': MultiOutputClassifier(estimator=LinearSVC(C=1, loss='hinge', max_iter=30000,
+                                          random_state=42)), 'features__n_jobs': None, 'features__transformer_list': [('text_pipeline', Pipeline(steps=[('vect',
+                 CountVectorizer(ngram_range=(1, 2),
+                                 tokenizer=<function tokenize at 0x000002C5028FD9D0>)),
+                ('tfidf', TfidfTransformer())])), ('starting_verb', StartingVerbExtractor())], 'features__transformer_weights': None, 'features__verbose': False, 'features__text_pipeline': Pipeline(steps=[('vect',
+                 CountVectorizer(ngram_range=(1, 2),
+                                 tokenizer=<function tokenize at 0x000002C5028FD9D0>)),
+                ('tfidf', TfidfTransformer())]), 'features__starting_verb': StartingVerbExtractor(), 'features__text_pipeline__memory': None, 'features__text_pipeline__steps': [('vect', CountVectorizer(ngram_range=(1, 2),
+                tokenizer=<function tokenize at 0x000002C5028FD9D0>)), ('tfidf', TfidfTransformer())], 'features__text_pipeline__verbose': False, 'features__text_pipeline__vect': CountVectorizer(ngram_range=(1, 2),
+                tokenizer=<function tokenize at 0x000002C5028FD9D0>), 'features__text_pipeline__tfidf': TfidfTransformer(), 'features__text_pipeline__vect__analyzer': 'word', 'features__text_pipeline__vect__binary': False, 'features__text_pipeline__vect__decode_error': 'strict', 'features__text_pipeline__vect__dtype': <class 'numpy.int64'>, 'features__text_pipeline__vect__encoding': 'utf-8', 'features__text_pipeline__vect__input': 'content', 'features__text_pipeline__vect__lowercase': True, 'features__text_pipeline__vect__max_df': 1.0, 'features__text_pipeline__vect__max_features': None, 'features__text_pipeline__vect__min_df': 1, 'features__text_pipeline__vect__ngram_range': (1, 2), 'features__text_pipeline__vect__preprocessor': None, 'features__text_pipeline__vect__stop_words': None, 'features__text_pipeline__vect__strip_accents': None, 'features__text_pipeline__vect__token_pattern': '(?u)\\b\\w\\w+\\b', 'features__text_pipeline__vect__tokenizer': <function tokenize at 0x000002C5028FD9D0>, 'features__text_pipeline__vect__vocabulary': None, 'features__text_pipeline__tfidf__norm': 'l2', 'features__text_pipeline__tfidf__smooth_idf': True, 'features__text_pipeline__tfidf__sublinear_tf': False, 'features__text_pipeline__tfidf__use_idf': True, 'classifier__estimator__C': 1, 'classifier__estimator__class_weight': None, 'classifier__estimator__dual': True, 'classifier__estimator__fit_intercept': True, 'classifier__estimator__intercept_scaling': 1, 'classifier__estimator__loss': 'hinge', 'classifier__estimator__max_iter': 30000, 'classifier__estimator__multi_class': 'ovr', 'classifier__estimator__penalty': 'l2', 'classifier__estimator__random_state': 42, 'classifier__estimator__tol': 0.0001, 'classifier__estimator__verbose': 0, 'classifier__estimator': LinearSVC(C=1, loss='hinge', max_iter=30000, random_state=42), 'classifier__n_jobs': None}
 ##### Scoring on test set #####
 C:\Users\ranvi\anaconda3\lib\site-packages\sklearn\metrics\_classification.py:1327: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
   _warn_prf(average, modifier, msg_start, len(result))
@@ -21,46 +39,46 @@ C:\Users\ranvi\anaconda3\lib\site-packages\sklearn\metrics\_classification.py:13
   _warn_prf(average, modifier, msg_start, len(result))
 Test set classification report:                         precision    recall  f1-score   support
 
-               related       0.86      0.93      0.89      4021
-               request       0.78      0.59      0.67       898
+               related       0.85      0.94      0.89      4021
+               request       0.80      0.63      0.70       898
                  offer       0.00      0.00      0.00        27
-           aid_related       0.74      0.71      0.72      2153
-          medical_help       0.59      0.26      0.36       393
-      medical_products       0.70      0.27      0.40       251
-     search_and_rescue       0.66      0.13      0.22       156
+           aid_related       0.73      0.75      0.74      2153
+          medical_help       0.56      0.23      0.32       393
+      medical_products       0.71      0.26      0.38       251
+     search_and_rescue       0.74      0.09      0.16       156
               security       0.00      0.00      0.00       106
-              military       0.69      0.26      0.38       184
-                 water       0.76      0.68      0.72       326
-                  food       0.79      0.74      0.76       595
-               shelter       0.83      0.57      0.67       435
-              clothing       0.69      0.53      0.60        58
-                 money       0.58      0.09      0.15       127
-        missing_people       0.64      0.13      0.22        68
-              refugees       0.62      0.19      0.29       176
-                 death       0.78      0.47      0.59       262
-             other_aid       0.64      0.09      0.16       723
-infrastructure_related       0.33      0.00      0.01       326
-             transport       0.78      0.21      0.33       260
-             buildings       0.69      0.34      0.45       229
-           electricity       0.58      0.23      0.33        91
+              military       0.64      0.20      0.30       184
+                 water       0.77      0.66      0.71       326
+                  food       0.78      0.75      0.77       595
+               shelter       0.80      0.59      0.68       435
+              clothing       0.64      0.47      0.54        58
+                 money       0.62      0.12      0.20       127
+        missing_people       0.75      0.09      0.16        68
+              refugees       0.57      0.12      0.20       176
+                 death       0.81      0.41      0.54       262
+             other_aid       0.66      0.13      0.22       723
+infrastructure_related       0.57      0.01      0.02       326
+             transport       0.80      0.20      0.32       260
+             buildings       0.70      0.34      0.45       229
+           electricity       0.58      0.15      0.24        91
                  tools       0.00      0.00      0.00        37
              hospitals       0.00      0.00      0.00        66
                  shops       0.00      0.00      0.00        16
            aid_centers       0.00      0.00      0.00        61
   other_infrastructure       0.00      0.00      0.00       204
-       weather_related       0.87      0.72      0.78      1461
-                floods       0.91      0.51      0.66       443
-                 storm       0.78      0.63      0.70       500
-                  fire       0.69      0.30      0.42        60
-            earthquake       0.91      0.79      0.85       485
-                  cold       0.65      0.35      0.46        97
-         other_weather       0.60      0.12      0.20       269
-         direct_report       0.73      0.47      0.57      1003
+       weather_related       0.84      0.75      0.79      1461
+                floods       0.91      0.50      0.64       443
+                 storm       0.76      0.63      0.69       500
+                  fire       0.87      0.22      0.35        60
+            earthquake       0.90      0.79      0.84       485
+                  cold       0.76      0.29      0.42        97
+         other_weather       0.59      0.07      0.13       269
+         direct_report       0.75      0.53      0.62      1003
 
-             micro avg       0.81      0.60      0.69     16567
-             macro avg       0.57      0.32      0.39     16567
-          weighted avg       0.75      0.60      0.64     16567
-           samples avg       0.63      0.51      0.52     16567
+             micro avg       0.80      0.61      0.69     16567
+             macro avg       0.59      0.31      0.37     16567
+          weighted avg       0.75      0.61      0.64     16567
+           samples avg       0.64      0.52      0.53     16567
 
 Saving model...
     MODEL: classifier.pkl

@@ -1,8 +1,5 @@
 # Disaster Response Pipeline Project (Udacity - Data Science Nanodegree)
 
-![Intro Pic](screenshots/intro.png)
-
-
 ## Table of Contents
 1. [Description](#description)
 2. [Getting Started](#getting_started)
@@ -44,7 +41,7 @@ The project is divided into the following key sections:
 
 To clone the git repository:
 ```
-git clone https://github.com/canaveensetia/udacity-disaster-response-pipeline.git
+git clone https://github.com/ranvir-rana/udacity_data_scientist.git
 ```
 
 <a name="execution"></a>

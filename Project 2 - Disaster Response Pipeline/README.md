@@ -49,9 +49,9 @@ git clone https://github.com/ranvir-rana/udacity_data_scientist.git
 1. Run the following commands in the project's directory to set up the database, train model and save the model.
 
     - To run ETL pipeline for data cleaning and storing data in the database:
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/disaster_response_db.db`
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
     - To run the ML pipeline that loads data from DB, trains classifier and saves the classifier as a pickle file:
-        `python models/train_classifier.py data/disaster_response_db.db models/classifier.pkl`
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
         
 2. Run the following command in the app's directory to run the web app:
     `python run.py`

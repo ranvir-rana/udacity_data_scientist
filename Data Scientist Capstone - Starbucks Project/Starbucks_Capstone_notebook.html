@@ -1,0 +1,3295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>243271</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<section id="-starbucks-capstone-challenge" class="cell markdown">
+<h2># Starbucks Capstone Challenge</h2>
+<h3 id="introduction">Introduction</h3>
+<p>This data set contains simulated data that mimics customer behavior on the Starbucks rewards mobile app. Once every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discount or BOGO (buy one get one free). Some users might not receive any offer during certain weeks.</p>
+<p>Not all users receive the same offer, and that is the challenge to solve with this data set.</p>
+<p>Your task is to combine transaction, demographic and offer data to determine which demographic groups respond best to which offer type. This data set is a simplified version of the real Starbucks app because the underlying simulator only has one product whereas Starbucks actually sells dozens of products.</p>
+<p>Every offer has a validity period before the offer expires. As an example, a BOGO offer might be valid for only 5 days. You'll see in the data set that informational offers have a validity period even though these ads are merely providing information about a product; for example, if an informational offer has 7 days of validity, you can assume the customer is feeling the influence of the offer for 7 days after receiving the advertisement.</p>
+<p>You'll be given transactional data showing user purchases made on the app including the timestamp of purchase and the amount of money spent on a purchase. This transactional data also has a record for each offer that a user receives as well as a record for when a user actually views the offer. There are also records for when a user completes an offer.</p>
+<p>Keep in mind as well that someone using the app might make a purchase through the app without having received an offer or seen an offer.</p>
+<h3 id="example">Example</h3>
+<p>To give an example, a user could receive a discount offer buy 10 dollars get 2 off on Monday. The offer is valid for 10 days from receipt. If the customer accumulates at least 10 dollars in purchases during the validity period, the customer completes the offer.</p>
+<p>However, there are a few things to watch out for in this data set. Customers do not opt into the offers that they receive; in other words, a user can receive an offer, never actually view the offer, and still complete the offer. For example, a user might receive the "buy 10 dollars get 2 dollars off offer", but the user never opens the offer during the 10 day validity period. The customer spends 15 dollars during those ten days. There will be an offer completion record in the data set; however, the customer was not influenced by the offer because the customer never viewed the offer.</p>
+<h3 id="cleaning">Cleaning</h3>
+<p>This makes data cleaning especially important and tricky.</p>
+<p>You'll also want to take into account that some demographic groups will make purchases even if they don't receive an offer. From a business perspective, if a customer is going to make a 10 dollar purchase without an offer anyway, you wouldn't want to send a buy 10 dollars get 2 dollars off offer. You'll want to try to assess what a certain demographic group will buy when not receiving any offers.</p>
+<h3 id="final-advice">Final Advice</h3>
+<p>Because this is a capstone project, you are free to analyze the data any way you see fit. For example, you could build a machine learning model that predicts how much someone will spend based on demographics and offer type. Or you could build a model that predicts whether or not someone will respond to an offer. Or, you don't need to build a machine learning model at all. You could develop a set of heuristics that determine what offer you should send to each customer (i.e., 75 percent of women customers who were 35 years old responded to offer A vs 40 percent from the same demographic to offer B, so send offer A).</p>
+</section>
+<section id="-data-sets" class="cell markdown">
+<h2># Data Sets</h2>
+<p>The data is contained in three files:</p>
+<ul>
+<li>portfolio.json - containing offer ids and meta data about each offer (duration, type, etc.)</li>
+<li>profile.json - demographic data for each customer</li>
+<li>transcript.json - records for transactions, offers received, offers viewed, and offers completed</li>
+</ul>
+<p>Here is the schema and explanation of each variable in the files:</p>
+<p><strong>portfolio.json</strong></p>
+<ul>
+<li>id (string) - offer id</li>
+<li>offer_type (string) - type of offer ie BOGO, discount, informational</li>
+<li>difficulty (int) - minimum required spend to complete an offer</li>
+<li>reward (int) - reward given for completing an offer</li>
+<li>duration (int) - time for offer to be open, in days</li>
+<li>channels (list of strings)</li>
+</ul>
+<p><strong>profile.json</strong></p>
+<ul>
+<li>age (int) - age of the customer</li>
+<li>became_member_on (int) - date when customer created an app account</li>
+<li>gender (str) - gender of the customer (note some entries contain 'O' for other rather than M or F)</li>
+<li>id (str) - customer id</li>
+<li>income (float) - customer's income</li>
+</ul>
+<p><strong>transcript.json</strong></p>
+<ul>
+<li>event (str) - record description (ie transaction, offer received, offer viewed, etc.)</li>
+<li>person (str) - customer id</li>
+<li>time (int) - time in hours since start of test. The data begins at time t=0</li>
+<li>value - (dict of strings) - either an offer id or transaction amount depending on the record</li>
+</ul>
+<p><strong>Note:</strong> If you are using the workspace, you will need to go to the terminal and run the command <code>conda update pandas</code> before reading in the files. This is because the version of pandas in the workspace cannot read in the transcript.json file correctly, but the newest version of pandas can. You can access the termnal from the orange icon in the top left of this notebook.</p>
+<p>You can see how to access the terminal and how the install works using the two images below. First you need to access the terminal:</p>
+<p><img src="pic1.png"/></p>
+<p>Then you will want to run the above command:</p>
+<p><img src="pic2.png"/></p>
+<p>Finally, when you enter back into the notebook (use the jupyter icon again), you should be able to run the below cell without any errors.</p>
+</section>
+<section id="-problem-statement" class="cell markdown">
+<h2>## Problem Statement</h2>
+<p>The Starbucks Capstone Challenge involves building a machine learning model that predicts offer success based on demographic information and offer details provided in the data. The model should be able to accurately predict whether an offer is going to be successfully completed based on customer and offer characteristics.</p>
+<p>Additionally, the project aims to answer the following questions:</p>
+<ul>
+<li>Which offer is the most successful?</li>
+<li>Who spends more money, male or female?</li>
+</ul>
+<p>The data set simulates customer behavior on the Starbucks rewards mobile app. Starbucks sends out offers to users of the mobile app, which can be an advertisement or an actual offer such as a discount or BOGO. However, not all users receive the same offer, and the challenge is to solve this problem using the available data.</p>
+<p>The project involves data cleaning, feature engineering, and building and evaluating the machine learning model. The model's accuracy will be evaluated using appropriate metrics such as precision, recall, and F1-score.</p>
+<p>The results of this project can help Starbucks gain insights into customer behavior and optimize their marketing campaigns to increase offer success rates.</p>
+</section>
+<div class="cell code" data-execution_count="56">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> preprocessing</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split, GridSearchCV, RandomizedSearchCV,cross_val_score, learning_curve</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix, roc_auc_score</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> Pipeline</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style <span class="op">=</span> <span class="st">&#39;darkgrid&#39;</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">&#39;ignore&#39;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="57">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in the json files</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>portfolio <span class="op">=</span> pd.read_json(<span class="st">&#39;data/portfolio.json&#39;</span>, orient<span class="op">=</span><span class="st">&#39;records&#39;</span>, lines<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>profile <span class="op">=</span> pd.read_json(<span class="st">&#39;data/profile.json&#39;</span>, orient<span class="op">=</span><span class="st">&#39;records&#39;</span>, lines<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>transcript <span class="op">=</span> pd.read_json(<span class="st">&#39;data/transcript.json&#39;</span>, orient<span class="op">=</span><span class="st">&#39;records&#39;</span>, lines<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+</div>
+<section id="-data-exploration" class="cell markdown">
+<h2>### Data Exploration</h2>
+</section>
+<section id="a-portfolio-data---offer-information" class="cell markdown">
+<h4>(a) Portfolio data - offer information</h4>
+<p>First, let's take a quick look at the different offers in the portfolio.</p>
+</section>
+<div class="cell code" data-execution_count="58">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>portfolio.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="58">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>reward</th>
+      <th>channels</th>
+      <th>difficulty</th>
+      <th>duration</th>
+      <th>offer_type</th>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10</td>
+      <td>[email, mobile, social]</td>
+      <td>10</td>
+      <td>7</td>
+      <td>bogo</td>
+      <td>ae264e3637204a6fb9bb56bc8210ddfd</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10</td>
+      <td>[web, email, mobile, social]</td>
+      <td>10</td>
+      <td>5</td>
+      <td>bogo</td>
+      <td>4d5c57ea9a6940dd891ad53e9dbe8da0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>[web, email, mobile]</td>
+      <td>0</td>
+      <td>4</td>
+      <td>informational</td>
+      <td>3f207df678b143eea3cee63160fa8bed</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>[web, email, mobile]</td>
+      <td>5</td>
+      <td>7</td>
+      <td>bogo</td>
+      <td>9b98b8c7a33c4b65b9aebfe6a799e6d9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>[web, email]</td>
+      <td>20</td>
+      <td>10</td>
+      <td>discount</td>
+      <td>0b1e1539f2cc45b7b9fa7c272da2e1d7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>After examining the portfolio data, I intend to execute the following steps to cleanse the data:</p>
+<ul>
+<li>Assess the categorical columns and decide how to proceed with cleaning them.</li>
+<li>Generate dummy variables for the various offer campaigns represented by different channels.</li>
+<li>Generate dummy variables for the offer types.</li>
+<li>Combine the dummy variable values and drop the original columns.</li>
+</ul>
+</div>
+<div class="cell code" data-execution_count="59">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>unique_offers <span class="op">=</span> portfolio[<span class="st">&#39;id&#39;</span>].nunique()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;There are </span><span class="sc">{</span>unique_offers<span class="sc">}</span><span class="ss"> unique offers in the portfolio.&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The distribution of these offers among the offer types is as follows:&quot;</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(portfolio.offer_type.value_counts())</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>There are 10 unique offers in the portfolio.
+The distribution of these offers among the offer types is as follows:
+bogo             4
+discount         4
+informational    2
+Name: offer_type, dtype: int64
+</code></pre>
+</div>
+</div>
+<div class="cell markdown">
+<p>In order to perform analysis, it is necessary to represent the various channels and offer types in a different format. Therefore, it is required to convert the categorical variables into indicator variables.</p>
+</div>
+<div class="cell code" data-execution_count="60">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean channels</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>channels <span class="op">=</span> pd.get_dummies(portfolio[<span class="st">&#39;channels&#39;</span>].<span class="bu">apply</span>(pd.Series).stack()).<span class="bu">sum</span>(level<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>portfolio <span class="op">=</span> pd.concat([portfolio, channels], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>portfolio.drop([<span class="st">&#39;channels&#39;</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column &#39;offer&#39; by concatenating offer_type, reward, difficulty, and duration</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>portfolio[<span class="st">&#39;offer_description&#39;</span>] <span class="op">=</span> (portfolio[<span class="st">&#39;offer_type&#39;</span>] <span class="op">+</span> <span class="st">&quot;_offer_spend_&quot;</span> <span class="op">+</span> portfolio[<span class="st">&#39;difficulty&#39;</span>].astype(<span class="st">&#39;str&#39;</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                      <span class="op">+</span> <span class="st">&quot;_get_&quot;</span> <span class="op">+</span> portfolio[<span class="st">&#39;reward&#39;</span>].astype(<span class="st">&#39;str&#39;</span>) <span class="op">+</span> <span class="st">&quot;_valid_for_&quot;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                      <span class="op">+</span> portfolio[<span class="st">&#39;duration&#39;</span>].astype(<span class="st">&#39;str&#39;</span>) <span class="op">+</span> <span class="st">&quot;days&quot;</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean offer types</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>offer_types <span class="op">=</span> pd.get_dummies(portfolio[<span class="st">&#39;offer_type&#39;</span>])</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>portfolio <span class="op">=</span> pd.concat([portfolio, offer_types], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>portfolio.rename(columns<span class="op">=</span>{<span class="st">&#39;id&#39;</span>: <span class="st">&#39;offer_id&#39;</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the updated portfolio</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>portfolio.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="60">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>reward</th>
+      <th>difficulty</th>
+      <th>duration</th>
+      <th>offer_type</th>
+      <th>offer_id</th>
+      <th>email</th>
+      <th>mobile</th>
+      <th>social</th>
+      <th>web</th>
+      <th>offer_description</th>
+      <th>bogo</th>
+      <th>discount</th>
+      <th>informational</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10</td>
+      <td>10</td>
+      <td>7</td>
+      <td>bogo</td>
+      <td>ae264e3637204a6fb9bb56bc8210ddfd</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>bogo_offer_spend_10_get_10_valid_for_7days</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10</td>
+      <td>10</td>
+      <td>5</td>
+      <td>bogo</td>
+      <td>4d5c57ea9a6940dd891ad53e9dbe8da0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>bogo_offer_spend_10_get_10_valid_for_5days</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>informational</td>
+      <td>3f207df678b143eea3cee63160fa8bed</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>informational_offer_spend_0_get_0_valid_for_4days</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>5</td>
+      <td>7</td>
+      <td>bogo</td>
+      <td>9b98b8c7a33c4b65b9aebfe6a799e6d9</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>bogo_offer_spend_5_get_5_valid_for_7days</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>20</td>
+      <td>10</td>
+      <td>discount</td>
+      <td>0b1e1539f2cc45b7b9fa7c272da2e1d7</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>discount_offer_spend_20_get_5_valid_for_10days</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>The next step is to examine the demographic data of the customers, which is stored in the profile dataset. This dataset contains information about the customers' profiles.</p>
+</div>
+<div class="cell code" data-execution_count="61">
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>profile.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="61">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gender</th>
+      <th>age</th>
+      <th>id</th>
+      <th>became_member_on</th>
+      <th>income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>None</td>
+      <td>118</td>
+      <td>68be06ca386d4c31939f3a4f0e3dd783</td>
+      <td>20170212</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>F</td>
+      <td>55</td>
+      <td>0610b486422d4921ae7d2bf64640c50b</td>
+      <td>20170715</td>
+      <td>112000.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>None</td>
+      <td>118</td>
+      <td>38fe809add3b4fcf9315a9694bb96ff5</td>
+      <td>20180712</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>F</td>
+      <td>75</td>
+      <td>78afa995795e4d85b5d9ceeca43f5fef</td>
+      <td>20170509</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>None</td>
+      <td>118</td>
+      <td>a03223e636434f42ac4c3df47e8bac43</td>
+      <td>20170804</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>To clean the profile data, I will be executing the following steps:</p>
+<ul>
+<li>Check for missing values in the dataset.</li>
+<li>Examine the gender and income columns for any missing data.</li>
+<li>Convert the 'became_member_on' column data to datetime format.</li>
+<li>Calculate the total number of days since a customer became a member and store it in a new column named 'membership_duration'.</li>
+<li>Rename the 'id' column to 'customer_id' and reorder the columns as required.</li>
+</ul>
+</div>
+<div class="cell code" data-execution_count="62">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>profile.isnull().<span class="bu">sum</span>()<span class="op">*</span><span class="dv">100</span><span class="op">/</span><span class="bu">len</span>(profile)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="62">
+<pre><code>gender              12.794118
+age                  0.000000
+id                   0.000000
+became_member_on     0.000000
+income              12.794118
+dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="63">
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(profile[(profile[<span class="st">&#39;gender&#39;</span>].isna()) <span class="op">&amp;</span> (profile[<span class="st">&#39;income&#39;</span>].isna())]).head(<span class="dv">10</span>)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="63">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gender</th>
+      <th>age</th>
+      <th>id</th>
+      <th>became_member_on</th>
+      <th>income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>None</td>
+      <td>118</td>
+      <td>68be06ca386d4c31939f3a4f0e3dd783</td>
+      <td>20170212</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>None</td>
+      <td>118</td>
+      <td>38fe809add3b4fcf9315a9694bb96ff5</td>
+      <td>20180712</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>None</td>
+      <td>118</td>
+      <td>a03223e636434f42ac4c3df47e8bac43</td>
+      <td>20170804</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>None</td>
+      <td>118</td>
+      <td>8ec6ce2a7e7949b1bf142def7d0e0586</td>
+      <td>20170925</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>None</td>
+      <td>118</td>
+      <td>68617ca6246f4fbc85e91a2a49552598</td>
+      <td>20171002</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>None</td>
+      <td>118</td>
+      <td>8974fc5686fe429db53ddde067b88302</td>
+      <td>20161122</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>None</td>
+      <td>118</td>
+      <td>c4863c7985cf408faee930f111475da3</td>
+      <td>20170824</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>None</td>
+      <td>118</td>
+      <td>148adfcaa27d485b82f323aaaad036bd</td>
+      <td>20150919</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>None</td>
+      <td>118</td>
+      <td>744d603ef08c4f33af5a61c8c7628d1c</td>
+      <td>20170801</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>None</td>
+      <td>118</td>
+      <td>2b826eba31074a059d63b0ae8f50b7d5</td>
+      <td>20170907</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>It's worth noting that in cases where gender is marked as "None", the income value is also unknown. Moreover, when both gender and income are unknown, the age value is set to 118 for all rows with NaN values.</p>
+<p>Approximately 12.8% of the values in the dataset are missing. As this percentage is relatively small, I have decided to drop these missing values rather than implementing an imputation strategy, especially for the purpose of building a machine learning model.</p>
+</div>
+<div class="cell code" data-execution_count="64">
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>profile.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="65">
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate membership duration</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>profile[<span class="st">&#39;became_member_on&#39;</span>] <span class="op">=</span> pd.to_datetime(profile[<span class="st">&#39;became_member_on&#39;</span>], <span class="bu">format</span><span class="op">=</span><span class="st">&#39;%Y%m</span><span class="sc">%d</span><span class="st">&#39;</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>today <span class="op">=</span> datetime.datetime.today().date()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>membership_duration <span class="op">=</span> (today <span class="op">-</span> pd.to_datetime(profile[<span class="st">&#39;became_member_on&#39;</span>], <span class="bu">format</span><span class="op">=</span><span class="st">&#39;%Y%m</span><span class="sc">%d</span><span class="st">&#39;</span>).dt.date).dt.days</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>profile[<span class="st">&#39;membership_duration&#39;</span>] <span class="op">=</span> membership_duration</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the first 5 rows of the updated profile DataFrame</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>profile.head(<span class="dv">5</span>)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="65">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gender</th>
+      <th>age</th>
+      <th>id</th>
+      <th>became_member_on</th>
+      <th>income</th>
+      <th>membership_duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>F</td>
+      <td>55</td>
+      <td>0610b486422d4921ae7d2bf64640c50b</td>
+      <td>2017-07-15</td>
+      <td>112000.0</td>
+      <td>2069</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>F</td>
+      <td>75</td>
+      <td>78afa995795e4d85b5d9ceeca43f5fef</td>
+      <td>2017-05-09</td>
+      <td>100000.0</td>
+      <td>2136</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>M</td>
+      <td>68</td>
+      <td>e2127556f4f64592b11af22de27a7932</td>
+      <td>2018-04-26</td>
+      <td>70000.0</td>
+      <td>1784</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>M</td>
+      <td>65</td>
+      <td>389bc3fa690240e798340f5a15918d5c</td>
+      <td>2018-02-09</td>
+      <td>53000.0</td>
+      <td>1860</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>M</td>
+      <td>58</td>
+      <td>2eeac8d8feae4a8cad5a6af0499a211d</td>
+      <td>2017-11-11</td>
+      <td>51000.0</td>
+      <td>1950</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell code" data-execution_count="66">
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename &#39;id&#39; column to &#39;customer_id&#39;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>profile <span class="op">=</span> profile.rename(columns<span class="op">=</span>{<span class="st">&#39;id&#39;</span>: <span class="st">&#39;customer_id&#39;</span>})</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Reorder the columns as required</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>columns_order <span class="op">=</span> [<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;gender&#39;</span>, <span class="st">&#39;age&#39;</span>, <span class="st">&#39;income&#39;</span>, <span class="st">&#39;became_member_on&#39;</span>, <span class="st">&#39;membership_duration&#39;</span>]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>profile <span class="op">=</span> profile[columns_order]</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Reset the index</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>profile <span class="op">=</span> profile.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the first few rows of the updated profile DataFrame</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>profile.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="66">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>customer_id</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>income</th>
+      <th>became_member_on</th>
+      <th>membership_duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0610b486422d4921ae7d2bf64640c50b</td>
+      <td>F</td>
+      <td>55</td>
+      <td>112000.0</td>
+      <td>2017-07-15</td>
+      <td>2069</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>78afa995795e4d85b5d9ceeca43f5fef</td>
+      <td>F</td>
+      <td>75</td>
+      <td>100000.0</td>
+      <td>2017-05-09</td>
+      <td>2136</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>e2127556f4f64592b11af22de27a7932</td>
+      <td>M</td>
+      <td>68</td>
+      <td>70000.0</td>
+      <td>2018-04-26</td>
+      <td>1784</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>389bc3fa690240e798340f5a15918d5c</td>
+      <td>M</td>
+      <td>65</td>
+      <td>53000.0</td>
+      <td>2018-02-09</td>
+      <td>1860</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2eeac8d8feae4a8cad5a6af0499a211d</td>
+      <td>M</td>
+      <td>58</td>
+      <td>51000.0</td>
+      <td>2017-11-11</td>
+      <td>1950</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>To gain insight into the trend of membership growth over time, we can create a line graph that displays the number of new memberships added each year.</p>
+</div>
+<div class="cell code" data-execution_count="67">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Group customers by month and year they became members and count the number of customers for each month</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>membership_counts <span class="op">=</span> profile.groupby(profile[<span class="st">&#39;became_member_on&#39;</span>].dt.to_period(<span class="st">&#39;M&#39;</span>))[<span class="st">&#39;customer_id&#39;</span>].count()</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a line graph to show the trend of membership growth over time</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>plt.plot(membership_counts.index.to_timestamp(), membership_counts.values, linewidth<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Date&#39;</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Number of Memberships&#39;</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Membership Growth Trend&#39;</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
+<div class="output display_data">
+<p><img src="05f099e77808244e3455438e50871dc7ea2a2479.png" /></p>
+</div>
+</div>
+<div class="cell markdown">
+<p>The number of customers has increased every year, as can be seen from the membership growth trend.</p>
+</div>
+<div class="cell markdown">
+<p>To gain insights into the distribution of customer demographics based on their gender, we can create histograms and density plots for their income, age, and membership duration.</p>
+</div>
+<div class="cell code" data-execution_count="68">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_profile(df, variable):</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns a basic histogram and density plot for demographic variables</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">    INPUT:</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">    df - the DataFrame including the variable to be plotted</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">    variable - the variable to be plotted</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co">    OUTPUT:</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co">    plt - basic histogram and density plot</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;&#39;&#39;</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    palette <span class="op">=</span> sns.color_palette()</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">4</span>), nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">3</span>, sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    plt.sca(ax[<span class="dv">0</span>])</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    sns.distplot(df[df[<span class="st">&#39;gender&#39;</span>] <span class="op">==</span> <span class="st">&#39;F&#39;</span>][variable], bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>palette[<span class="dv">0</span>])</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">&#39;Female</span><span class="ch">\&#39;</span><span class="st">s </span><span class="sc">{}</span><span class="st"> Distribution&#39;</span>.<span class="bu">format</span>(variable))</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="ss">f&#39;</span><span class="sc">{</span>variable<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">&#39;Distribution&#39;</span>)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    plt.sca(ax[<span class="dv">1</span>])</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>    sns.distplot(df[df[<span class="st">&#39;gender&#39;</span>] <span class="op">==</span> <span class="st">&#39;M&#39;</span>][variable], bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>palette[<span class="dv">1</span>])</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">&#39;Male</span><span class="ch">\&#39;</span><span class="st">s </span><span class="sc">{}</span><span class="st"> Distribution&#39;</span>.<span class="bu">format</span>(variable))</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="ss">f&#39;</span><span class="sc">{</span>variable<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    plt.sca(ax[<span class="dv">2</span>])</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    sns.distplot(df[df[<span class="st">&#39;gender&#39;</span>] <span class="op">==</span> <span class="st">&#39;O&#39;</span>][variable], bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>palette[<span class="dv">2</span>])</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">&#39;Other</span><span class="ch">\&#39;</span><span class="st">s </span><span class="sc">{}</span><span class="st"> Distribution&#39;</span>.<span class="bu">format</span>(variable))</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="ss">f&#39;</span><span class="sc">{</span>variable<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> plt</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="69">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>age_plot <span class="op">=</span> plot_profile(profile, <span class="st">&#39;age&#39;</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>income_plot <span class="op">=</span> plot_profile(profile, <span class="st">&#39;income&#39;</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>membership_duration_plot <span class="op">=</span> plot_profile(profile, <span class="st">&#39;membership_duration&#39;</span>)</span></code></pre></div>
+<div class="output display_data">
+<p><img src="76afbc69b43756660b2122b26c199d86c6d179ee.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="47cbff4fbda5268d68c80eb58912e5ee35689944.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="d27f8da86809781392444ef430810eabd51839f2.png" /></p>
+</div>
+</div>
+<div class="cell markdown">
+<p>Now, we will examine the events related to the offers and transactions in the transcript data.</p>
+</div>
+<div class="cell code" data-execution_count="70">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>transcript.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="70">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>person</th>
+      <th>event</th>
+      <th>value</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>78afa995795e4d85b5d9ceeca43f5fef</td>
+      <td>offer received</td>
+      <td>{'offer id': '9b98b8c7a33c4b65b9aebfe6a799e6d9'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a03223e636434f42ac4c3df47e8bac43</td>
+      <td>offer received</td>
+      <td>{'offer id': '0b1e1539f2cc45b7b9fa7c272da2e1d7'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>e2127556f4f64592b11af22de27a7932</td>
+      <td>offer received</td>
+      <td>{'offer id': '2906b810c7d4411798c6938adc9daaa5'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8ec6ce2a7e7949b1bf142def7d0e0586</td>
+      <td>offer received</td>
+      <td>{'offer id': 'fafdcd668e3743c1bb461111dcafc2a4'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>68617ca6246f4fbc85e91a2a49552598</td>
+      <td>offer received</td>
+      <td>{'offer id': '4d5c57ea9a6940dd891ad53e9dbe8da0'}</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell code" data-execution_count="71">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>unique_events <span class="op">=</span> transcript[<span class="st">&#39;event&#39;</span>].unique()</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;There are </span><span class="sc">{</span><span class="bu">len</span>(unique_events)<span class="sc">}</span><span class="ss"> unique event types: </span><span class="sc">{</span>unique_events<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>There are 4 unique event types: [&#39;offer received&#39; &#39;offer viewed&#39; &#39;transaction&#39; &#39;offer completed&#39;]
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="72">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of events of each type</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>event_counts <span class="op">=</span> transcript[<span class="st">&#39;event&#39;</span>].value_counts()</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the event counts and total number of events</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Number of events by type:</span><span class="ch">\n</span><span class="st">&quot;</span>, event_counts, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Total number of events:&quot;</span>, <span class="bu">len</span>(transcript))</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only the rows in transcript that have a valid customer ID in profile</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>valid_ids <span class="op">=</span> profile[<span class="st">&#39;customer_id&#39;</span>].unique()</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>transcript <span class="op">=</span> transcript[transcript[<span class="st">&#39;person&#39;</span>].isin(valid_ids)]</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Number of events with valid customer IDs:&quot;</span>, <span class="bu">len</span>(transcript))</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>transcript.head()</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Number of events by type:
+ transaction        138953
+offer received      76277
+offer viewed        57725
+offer completed     33579
+Name: event, dtype: int64 
+
+Total number of events: 306534
+Number of events with valid customer IDs: 272762
+</code></pre>
+</div>
+<div class="output execute_result" data-execution_count="72">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>person</th>
+      <th>event</th>
+      <th>value</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>78afa995795e4d85b5d9ceeca43f5fef</td>
+      <td>offer received</td>
+      <td>{'offer id': '9b98b8c7a33c4b65b9aebfe6a799e6d9'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>e2127556f4f64592b11af22de27a7932</td>
+      <td>offer received</td>
+      <td>{'offer id': '2906b810c7d4411798c6938adc9daaa5'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>389bc3fa690240e798340f5a15918d5c</td>
+      <td>offer received</td>
+      <td>{'offer id': 'f19421c1d4aa40978ebb69ca19b0e20d'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2eeac8d8feae4a8cad5a6af0499a211d</td>
+      <td>offer received</td>
+      <td>{'offer id': '3f207df678b143eea3cee63160fa8bed'}</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer received</td>
+      <td>{'offer id': '0b1e1539f2cc45b7b9fa7c272da2e1d7'}</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell code" data-execution_count="73">
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new DataFrame with details about customer ID and amount spent</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>df_trans <span class="op">=</span> transcript[transcript[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;transaction&#39;</span>]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>moneyspent <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>df_trans)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>moneyspent <span class="op">=</span> moneyspent.drop([<span class="st">&#39;value&#39;</span>, <span class="st">&#39;event&#39;</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>moneyspent[<span class="st">&#39;amount&#39;</span>] <span class="op">=</span> df_trans[<span class="st">&#39;value&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">list</span>(x.values())[<span class="dv">0</span>])</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>moneyspent <span class="op">=</span> moneyspent.rename(columns<span class="op">=</span>{<span class="st">&#39;person&#39;</span>: <span class="st">&#39;customer_id&#39;</span>})</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>moneyspent <span class="op">=</span> moneyspent.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the gender information from the profile DataFrame into moneyspent</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>moneyspent <span class="op">=</span> pd.merge(moneyspent, profile[[<span class="st">&#39;gender&#39;</span>, <span class="st">&#39;customer_id&#39;</span>]], how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&#39;customer_id&#39;</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the number of rows in moneyspent</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Number of rows in moneyspent:&quot;</span>, <span class="bu">len</span>(moneyspent), <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first 5 rows of moneyspent</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>moneyspent.head()</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Number of rows in moneyspent: 123957 
+
+</code></pre>
+</div>
+<div class="output execute_result" data-execution_count="73">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>customer_id</th>
+      <th>time</th>
+      <th>amount</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>02c083884c7d45b39cc68e1314fec56c</td>
+      <td>0</td>
+      <td>0.83</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9fa9ae8f57894cc9a3b8a9bbe0fc1b2f</td>
+      <td>0</td>
+      <td>34.56</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>54890f68699049c2a04d415abc25e717</td>
+      <td>0</td>
+      <td>13.23</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>b2f1cd155b864803ad8334cdf13c4bd2</td>
+      <td>0</td>
+      <td>19.51</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>fe97aa22dd3e48c8b143116a8403dd52</td>
+      <td>0</td>
+      <td>18.97</td>
+      <td>F</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell code" data-execution_count="74">
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group the moneyspent DataFrame by gender and calculate the total number and amount of transactions</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>gender_groupby <span class="op">=</span> moneyspent.groupby(<span class="st">&#39;gender&#39;</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>gender_transactions <span class="op">=</span> gender_groupby.amount.count()</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>gender_expense <span class="op">=</span> gender_groupby.amount.<span class="bu">sum</span>()</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the average expense per transaction for each gender and plot the results as a bar chart</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>avg_expense <span class="op">=</span> gender_expense <span class="op">/</span> gender_transactions</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>avg_expense.reindex([<span class="st">&#39;M&#39;</span>, <span class="st">&#39;F&#39;</span>, <span class="st">&#39;O&#39;</span>]).plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>, rot<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Average expense per transaction by gender&quot;</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Gender&quot;</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Average expense&quot;</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the average expense per transaction for each gender</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Average expense per transaction by gender:</span><span class="ch">\n</span><span class="st">&quot;</span>, avg_expense)</span></code></pre></div>
+<div class="output display_data">
+<p><img src="43719659d2f5603fd755ee58b248ed15ad013856.png" /></p>
+</div>
+<div class="output stream stdout">
+<pre><code>Average expense per transaction by gender:
+ gender
+F    17.490077
+M    11.606600
+O    14.798731
+Name: amount, dtype: float64
+</code></pre>
+</div>
+</div>
+<div class="cell markdown">
+<p>Based on the analysis of the moneyspent DataFrame, it appears that, on average, women tend to spend more money per transaction than men and individuals of other genders.</p>
+</div>
+<div class="cell code" data-execution_count="75">
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the &#39;value&#39; column into separate columns and fill the missing &#39;offer_id&#39; values</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> transcript[<span class="st">&#39;value&#39;</span>].<span class="bu">apply</span>(pd.Series)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>values.offer_id.fillna(values[<span class="st">&#39;offer id&#39;</span>], inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate the new columns to the original DataFrame</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>transcript <span class="op">=</span> pd.concat([transcript, values], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the first few rows of the updated DataFrame</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>transcript.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="75">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>person</th>
+      <th>event</th>
+      <th>value</th>
+      <th>time</th>
+      <th>offer id</th>
+      <th>amount</th>
+      <th>offer_id</th>
+      <th>reward</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>78afa995795e4d85b5d9ceeca43f5fef</td>
+      <td>offer received</td>
+      <td>{'offer id': '9b98b8c7a33c4b65b9aebfe6a799e6d9'}</td>
+      <td>0</td>
+      <td>9b98b8c7a33c4b65b9aebfe6a799e6d9</td>
+      <td>NaN</td>
+      <td>9b98b8c7a33c4b65b9aebfe6a799e6d9</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>e2127556f4f64592b11af22de27a7932</td>
+      <td>offer received</td>
+      <td>{'offer id': '2906b810c7d4411798c6938adc9daaa5'}</td>
+      <td>0</td>
+      <td>2906b810c7d4411798c6938adc9daaa5</td>
+      <td>NaN</td>
+      <td>2906b810c7d4411798c6938adc9daaa5</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>389bc3fa690240e798340f5a15918d5c</td>
+      <td>offer received</td>
+      <td>{'offer id': 'f19421c1d4aa40978ebb69ca19b0e20d'}</td>
+      <td>0</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>NaN</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2eeac8d8feae4a8cad5a6af0499a211d</td>
+      <td>offer received</td>
+      <td>{'offer id': '3f207df678b143eea3cee63160fa8bed'}</td>
+      <td>0</td>
+      <td>3f207df678b143eea3cee63160fa8bed</td>
+      <td>NaN</td>
+      <td>3f207df678b143eea3cee63160fa8bed</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer received</td>
+      <td>{'offer id': '0b1e1539f2cc45b7b9fa7c272da2e1d7'}</td>
+      <td>0</td>
+      <td>0b1e1539f2cc45b7b9fa7c272da2e1d7</td>
+      <td>NaN</td>
+      <td>0b1e1539f2cc45b7b9fa7c272da2e1d7</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell code" data-execution_count="76">
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the number of offers received per customer and save the result in a new DataFrame</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>num_offers <span class="op">=</span> transcript[transcript[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;offer received&#39;</span>].groupby(<span class="st">&#39;person&#39;</span>).count().reset_index()</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>num_offers.rename(columns<span class="op">=</span>{<span class="st">&#39;offer_id&#39;</span>: <span class="st">&#39;num_offers&#39;</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the num_offers DataFrame with the original transcript DataFrame</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>transcript <span class="op">=</span> pd.merge(transcript, num_offers[[<span class="st">&#39;person&#39;</span>, <span class="st">&#39;num_offers&#39;</span>]], how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&#39;person&#39;</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the &#39;event&#39; column into indicator variables using one-hot encoding</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>event_types <span class="op">=</span> pd.get_dummies(transcript[<span class="st">&#39;event&#39;</span>])</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>transcript <span class="op">=</span> pd.concat([transcript, event_types], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop unnecessary columns and rename columns as needed</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>transcript.drop([<span class="st">&#39;offer id&#39;</span>, <span class="st">&#39;value&#39;</span>, <span class="st">&#39;reward&#39;</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>transcript.rename(columns<span class="op">=</span>{<span class="st">&#39;person&#39;</span>: <span class="st">&#39;customer_id&#39;</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the first few rows of the updated DataFrame</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>transcript.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="76">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>customer_id</th>
+      <th>event</th>
+      <th>time</th>
+      <th>amount</th>
+      <th>offer_id</th>
+      <th>num_offers</th>
+      <th>offer completed</th>
+      <th>offer received</th>
+      <th>offer viewed</th>
+      <th>transaction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>78afa995795e4d85b5d9ceeca43f5fef</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>9b98b8c7a33c4b65b9aebfe6a799e6d9</td>
+      <td>4.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>e2127556f4f64592b11af22de27a7932</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2906b810c7d4411798c6938adc9daaa5</td>
+      <td>4.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>389bc3fa690240e798340f5a15918d5c</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>6.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2eeac8d8feae4a8cad5a6af0499a211d</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>3f207df678b143eea3cee63160fa8bed</td>
+      <td>3.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>0b1e1539f2cc45b7b9fa7c272da2e1d7</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>To get a better understanding of the event data for each customer and identify relevant factors for analysis, we can filter the data by a single customer ID.</p>
+</div>
+<div class="cell code" data-execution_count="77">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>transcript[transcript[<span class="st">&#39;customer_id&#39;</span>]<span class="op">==</span><span class="st">&#39;aa4862eba776480b8bb9c68455b8c2e1&#39;</span>]</span></code></pre></div>
+<div class="output execute_result" data-execution_count="77">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>customer_id</th>
+      <th>event</th>
+      <th>time</th>
+      <th>amount</th>
+      <th>offer_id</th>
+      <th>num_offers</th>
+      <th>offer completed</th>
+      <th>offer received</th>
+      <th>offer viewed</th>
+      <th>transaction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>0b1e1539f2cc45b7b9fa7c272da2e1d7</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>17761</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer viewed</td>
+      <td>18</td>
+      <td>NaN</td>
+      <td>0b1e1539f2cc45b7b9fa7c272da2e1d7</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>47388</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer received</td>
+      <td>168</td>
+      <td>NaN</td>
+      <td>4d5c57ea9a6940dd891ad53e9dbe8da0</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>58447</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer viewed</td>
+      <td>168</td>
+      <td>NaN</td>
+      <td>4d5c57ea9a6940dd891ad53e9dbe8da0</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>74088</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>transaction</td>
+      <td>210</td>
+      <td>12.33</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>74089</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer completed</td>
+      <td>210</td>
+      <td>NaN</td>
+      <td>4d5c57ea9a6940dd891ad53e9dbe8da0</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>98720</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer received</td>
+      <td>336</td>
+      <td>NaN</td>
+      <td>5a8bc65990b245e5a138643cd4eb9837</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>109797</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer viewed</td>
+      <td>336</td>
+      <td>NaN</td>
+      <td>5a8bc65990b245e5a138643cd4eb9837</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>133964</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer received</td>
+      <td>408</td>
+      <td>NaN</td>
+      <td>ae264e3637204a6fb9bb56bc8210ddfd</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>154828</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>transaction</td>
+      <td>426</td>
+      <td>15.95</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>154829</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer completed</td>
+      <td>426</td>
+      <td>NaN</td>
+      <td>ae264e3637204a6fb9bb56bc8210ddfd</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>157455</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer viewed</td>
+      <td>432</td>
+      <td>NaN</td>
+      <td>ae264e3637204a6fb9bb56bc8210ddfd</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>166373</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>transaction</td>
+      <td>456</td>
+      <td>23.30</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>178056</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>transaction</td>
+      <td>498</td>
+      <td>10.08</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>197122</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>transaction</td>
+      <td>516</td>
+      <td>11.33</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>217963</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer received</td>
+      <td>576</td>
+      <td>NaN</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>246297</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer viewed</td>
+      <td>612</td>
+      <td>NaN</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>252501</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>transaction</td>
+      <td>630</td>
+      <td>12.56</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>252502</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer completed</td>
+      <td>630</td>
+      <td>NaN</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>To perform analysis on both the transcript and portfolio data, we need to merge the two data sets based on their common offer ID column, creating one combined data set for analysis.</p>
+</div>
+<div class="cell code" data-execution_count="78">
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the &#39;transcript&#39; and &#39;portfolio&#39; DataFrames based on &#39;offer_id&#39;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>merged_data <span class="op">=</span> pd.merge(transcript, portfolio, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&#39;offer_id&#39;</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of customers for each combination of &#39;offer_type&#39; and &#39;event&#39; using groupby()</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>customer_count <span class="op">=</span> merged_data.groupby([<span class="st">&#39;offer_type&#39;</span>, <span class="st">&#39;event&#39;</span>]).customer_id.count()</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the resulting customer count for each combination of &#39;offer_type&#39; and &#39;event&#39;</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(customer_count)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the first few rows of the merged DataFrame</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>merged_data.head()</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>offer_type     event          
+bogo           offer completed    15258
+               offer received     26537
+               offer viewed       22039
+discount       offer completed    17186
+               offer received     26664
+               offer viewed       18461
+informational  offer received     13300
+               offer viewed        9360
+Name: customer_id, dtype: int64
+</code></pre>
+</div>
+<div class="output execute_result" data-execution_count="78">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>customer_id</th>
+      <th>event</th>
+      <th>time</th>
+      <th>amount</th>
+      <th>offer_id</th>
+      <th>num_offers</th>
+      <th>offer completed</th>
+      <th>offer received</th>
+      <th>offer viewed</th>
+      <th>transaction</th>
+      <th>...</th>
+      <th>duration</th>
+      <th>offer_type</th>
+      <th>email</th>
+      <th>mobile</th>
+      <th>social</th>
+      <th>web</th>
+      <th>offer_description</th>
+      <th>bogo</th>
+      <th>discount</th>
+      <th>informational</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>78afa995795e4d85b5d9ceeca43f5fef</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>9b98b8c7a33c4b65b9aebfe6a799e6d9</td>
+      <td>4.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>7.0</td>
+      <td>bogo</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>bogo_offer_spend_5_get_5_valid_for_7days</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>e2127556f4f64592b11af22de27a7932</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2906b810c7d4411798c6938adc9daaa5</td>
+      <td>4.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>7.0</td>
+      <td>discount</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>discount_offer_spend_10_get_2_valid_for_7days</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>389bc3fa690240e798340f5a15918d5c</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>6.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>bogo</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>bogo_offer_spend_5_get_5_valid_for_5days</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2eeac8d8feae4a8cad5a6af0499a211d</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>3f207df678b143eea3cee63160fa8bed</td>
+      <td>3.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>4.0</td>
+      <td>informational</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>informational_offer_spend_0_get_0_valid_for_4days</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>aa4862eba776480b8bb9c68455b8c2e1</td>
+      <td>offer received</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>0b1e1539f2cc45b7b9fa7c272da2e1d7</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>10.0</td>
+      <td>discount</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>discount_offer_spend_20_get_5_valid_for_10days</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>To explore the relationship between offer types and events in the combined data, we can create a visualization</p>
+</div>
+<div class="cell code" data-execution_count="79">
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>events_by_offer_type <span class="op">=</span> sns.catplot(data<span class="op">=</span>merged_data[merged_data[<span class="st">&#39;event&#39;</span>] <span class="op">!=</span> <span class="st">&#39;transaction&#39;</span>], </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>                                   x<span class="op">=</span><span class="st">&#39;offer_type&#39;</span>, hue<span class="op">=</span><span class="st">&#39;event&#39;</span>, kind<span class="op">=</span><span class="st">&#39;count&#39;</span>, aspect<span class="op">=</span><span class="fl">1.5</span>)</span></code></pre></div>
+<div class="output display_data">
+<p><img src="355906b171126f2be064697c6a356d324aaec95f.png" /></p>
+</div>
+</div>
+<section id="-data-preparation" class="cell markdown">
+<h2>### Data Preparation</h2>
+</section>
+<div class="cell markdown">
+<p>The data we have currently is not sufficient for model training. Basic cleaning has been done, but the data needs to be further prepared for modeling.</p>
+<p>To prepare the data, a separate column needs to be added to identify successful cases. For BOGO and discount offers, the possible event paths are:</p>
+<ul>
+<li>Successful offer: offer received → offer viewed → transaction(s) → offer completed</li>
+<li>Ineffective offer: offer received → offer viewed</li>
+<li>Unviewed offer: offer received</li>
+<li>Unviewed success: offer received → transaction(s) → offer completed</li>
+</ul>
+<p>A successful offer means that the customer viewed the offer and completed the offer resulting in a transaction. An ineffective offer means that the customer viewed the offer but did not complete it, and an unviewed offer means that the customer did not view the offer at all.</p>
+<p>However, it's important to distinguish between successful offers and unviewed success cases, where the customer completed the offer without viewing it. It is essential to separate these to target the right customers effectively.</p>
+<p>Ideally, Starbucks should target customer groups that follow event path 1 and avoid targeting those that are likely to follow paths 2, 3, and 4, as they are unlikely to make transactions or will make transactions regardless of the offer.</p>
+</div>
+<div class="cell code" data-execution_count="80">
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prepare_offer_completion(data):</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cleans dataframe for further analysis based on offer completion</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">    INPUT:</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">    data - The dataframe to be cleaned</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">    OUTPUT:</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">    cleaned - The cleaned dataframe</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;&#39;&#39;</span> </span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    pd.options.mode.chained_assignment <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Identify success cases in &#39;offer completed&#39; rows</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>    offers_completed <span class="op">=</span> data[[<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;event&#39;</span>, <span class="st">&#39;time&#39;</span>, <span class="st">&#39;offer_id&#39;</span>, <span class="st">&#39;num_offers&#39;</span>]].sort_values([<span class="st">&#39;customer_id&#39;</span>,<span class="st">&#39;time&#39;</span>])</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    offers_completed <span class="op">=</span> offers_completed[(offers_completed[<span class="st">&#39;event&#39;</span>]<span class="op">==</span><span class="st">&#39;offer viewed&#39;</span>) <span class="op">|</span> (offers_completed[<span class="st">&#39;event&#39;</span>]<span class="op">==</span><span class="st">&#39;offer completed&#39;</span>)]</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use shift() to identify unviewed successes</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    offers_completed[<span class="st">&#39;previous_offer_id&#39;</span>] <span class="op">=</span> offers_completed.groupby([<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;offer_id&#39;</span>])[<span class="st">&#39;offer_id&#39;</span>].shift()</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>    offers_completed[<span class="st">&#39;success&#39;</span>] <span class="op">=</span> np.where((offers_completed[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;offer completed&#39;</span>) <span class="op">&amp;</span> (offers_completed[<span class="st">&#39;previous_offer_id&#39;</span>] <span class="op">==</span> offers_completed[<span class="st">&#39;offer_id&#39;</span>]), <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>    offers_completed[<span class="st">&#39;unviewed_success&#39;</span>] <span class="op">=</span> np.where((offers_completed[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;offer completed&#39;</span>) <span class="op">&amp;</span> (offers_completed[<span class="st">&#39;previous_offer_id&#39;</span>].isna()), <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>    offers_completed.drop([<span class="st">&#39;previous_offer_id&#39;</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Re-include &#39;offer received&#39; rows</span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>    received_offers <span class="op">=</span> data[[<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;event&#39;</span>, <span class="st">&#39;time&#39;</span>, <span class="st">&#39;offer_id&#39;</span>, <span class="st">&#39;num_offers&#39;</span>]][data[<span class="st">&#39;event&#39;</span>]<span class="op">==</span><span class="st">&#39;offer received&#39;</span>].sort_values([<span class="st">&#39;customer_id&#39;</span>,<span class="st">&#39;time&#39;</span>])</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>    combined <span class="op">=</span> received_offers.append(offers_completed).sort_values([<span class="st">&#39;customer_id&#39;</span>,<span class="st">&#39;time&#39;</span>])</span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>    combined <span class="op">=</span> combined.sort_values([<span class="st">&#39;customer_id&#39;</span>,<span class="st">&#39;time&#39;</span>])</span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Transmit information from &#39;offer completed&#39; to corresponding &#39;offer received&#39; rows</span></span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>    successes <span class="op">=</span> combined[(combined[<span class="st">&#39;event&#39;</span>]<span class="op">==</span><span class="st">&#39;offer received&#39;</span>) <span class="op">|</span> (combined[<span class="st">&#39;event&#39;</span>]<span class="op">==</span><span class="st">&#39;offer completed&#39;</span>)]</span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>    successes[<span class="st">&#39;success&#39;</span>] <span class="op">=</span> successes.groupby([<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;offer_id&#39;</span>])[<span class="st">&#39;success&#39;</span>].bfill()</span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>    successes[<span class="st">&#39;unviewed_success&#39;</span>] <span class="op">=</span> successes.groupby([<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;offer_id&#39;</span>])[<span class="st">&#39;unviewed_success&#39;</span>].bfill()</span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> successes[successes[<span class="st">&#39;event&#39;</span>]<span class="op">==</span><span class="st">&#39;offer received&#39;</span>]</span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Classify remaining offers as failures and fill missing values</span></span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a>    result[<span class="st">&#39;failure&#39;</span>] <span class="op">=</span> np.where((result[<span class="st">&#39;success&#39;</span>].isna()) <span class="op">&amp;</span> (result[<span class="st">&#39;unviewed_success&#39;</span>].isna()), <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a>    result[<span class="st">&#39;success&#39;</span>] <span class="op">=</span> np.where(result[<span class="st">&#39;success&#39;</span>].isna(), <span class="dv">0</span>, result[<span class="st">&#39;success&#39;</span>])</span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a>    result[<span class="st">&#39;success&#39;</span>] <span class="op">=</span> result[<span class="st">&#39;success&#39;</span>].astype(<span class="st">&#39;int&#39;</span>)</span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a>    result[<span class="st">&#39;unviewed_success&#39;</span>] <span class="op">=</span> np.where(result[<span class="st">&#39;unviewed_success&#39;</span>].isna(), <span class="dv">0</span>, result[<span class="st">&#39;unviewed_success&#39;</span>])</span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a>    result[<span class="st">&#39;unviewed_success&#39;</span>] <span class="op">=</span> result[<span class="st">&#39;unviewed_success&#39;</span>].astype(<span class="st">&#39;int&#39;</span>)</span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Build categorical outcome column and add to result</span></span>
+<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a>    result[<span class="st">&#39;outcome&#39;</span>] <span class="op">=</span> np.where(result[<span class="st">&#39;success&#39;</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">&#39;success&#39;</span>, np.where(result[<span class="st">&#39;unviewed_success&#39;</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">&#39;unviewed success&#39;</span>, <span class="st">&#39;failure&#39;</span>))</span>
+<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a>    outcome_map <span class="op">=</span> {<span class="st">&#39;failure&#39;</span>: <span class="dv">0</span>, <span class="st">&#39;unviewed success&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;success&#39;</span>: <span class="dv">2</span>}</span>
+<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a>    result[<span class="st">&#39;outcome_factor&#39;</span>] <span class="op">=</span> result[<span class="st">&#39;outcome&#39;</span>].<span class="bu">map</span>(outcome_map)</span>
+<span id="cb32-46"><a href="#cb32-46" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add customer and offer information</span></span>
+<span id="cb32-48"><a href="#cb32-48" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> pd.merge(result, portfolio, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&#39;offer_id&#39;</span>)</span>
+<span id="cb32-49"><a href="#cb32-49" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> pd.merge(cleaned, profile, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&#39;customer_id&#39;</span>)</span>
+<span id="cb32-50"><a href="#cb32-50" aria-hidden="true" tabindex="-1"></a>    cleaned.drop([<span class="st">&#39;event&#39;</span>, <span class="st">&#39;became_member_on&#39;</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb32-51"><a href="#cb32-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-52"><a href="#cb32-52" aria-hidden="true" tabindex="-1"></a>    pd.options.mode.chained_assignment <span class="op">=</span> <span class="st">&quot;warn&quot;</span></span>
+<span id="cb32-53"><a href="#cb32-53" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-54"><a href="#cb32-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cleaned</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="81">
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create separate dataframes for BOGO and discount offers</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>bogo <span class="op">=</span> merged_data[merged_data[<span class="st">&#39;offer_type&#39;</span>]<span class="op">==</span><span class="st">&#39;bogo&#39;</span>]</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>discount <span class="op">=</span> merged_data[merged_data[<span class="st">&#39;offer_type&#39;</span>]<span class="op">==</span><span class="st">&#39;discount&#39;</span>]</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># append the two dataframes together</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>bogo_discount_notcleaned <span class="op">=</span> bogo.append(discount)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co"># clean the dataframes using prepare_offer_completion() function</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>bogo_cleaned <span class="op">=</span> prepare_offer_completion(bogo)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>discount_cleaned <span class="op">=</span> prepare_offer_completion(discount)</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co"># append the cleaned dataframes together</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>bogo_discount <span class="op">=</span> bogo_cleaned.append(discount_cleaned)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co"># print the first 5 rows of the cleaned and combined BOGO and discount dataframes</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>bogo_discount.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="81">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>customer_id</th>
+      <th>time</th>
+      <th>offer_id</th>
+      <th>num_offers</th>
+      <th>success</th>
+      <th>unviewed_success</th>
+      <th>failure</th>
+      <th>outcome</th>
+      <th>outcome_factor</th>
+      <th>reward</th>
+      <th>...</th>
+      <th>social</th>
+      <th>web</th>
+      <th>offer_description</th>
+      <th>bogo</th>
+      <th>discount</th>
+      <th>informational</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>income</th>
+      <th>membership_duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0009655768c64bdeb2e877511632db8f</td>
+      <td>408</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>unviewed success</td>
+      <td>1</td>
+      <td>5</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>bogo_offer_spend_5_get_5_valid_for_5days</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>M</td>
+      <td>33</td>
+      <td>72000.0</td>
+      <td>2154</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0011e0d4e6b944f998e987f904e8c1e5</td>
+      <td>504</td>
+      <td>9b98b8c7a33c4b65b9aebfe6a799e6d9</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>success</td>
+      <td>2</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>bogo_offer_spend_5_get_5_valid_for_7days</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>O</td>
+      <td>40</td>
+      <td>57000.0</td>
+      <td>1891</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0020c2b971eb4e9188eac86d93036a77</td>
+      <td>168</td>
+      <td>ae264e3637204a6fb9bb56bc8210ddfd</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>failure</td>
+      <td>0</td>
+      <td>10</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>bogo_offer_spend_10_get_10_valid_for_7days</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>F</td>
+      <td>59</td>
+      <td>90000.0</td>
+      <td>2567</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0020c2b971eb4e9188eac86d93036a77</td>
+      <td>408</td>
+      <td>4d5c57ea9a6940dd891ad53e9dbe8da0</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>success</td>
+      <td>2</td>
+      <td>10</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>bogo_offer_spend_10_get_10_valid_for_5days</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>F</td>
+      <td>59</td>
+      <td>90000.0</td>
+      <td>2567</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0020ccbbb6d84e358d3414a3ff76cffd</td>
+      <td>336</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>success</td>
+      <td>2</td>
+      <td>5</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>bogo_offer_spend_5_get_5_valid_for_5days</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>F</td>
+      <td>24</td>
+      <td>60000.0</td>
+      <td>2315</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 25 columns</p>
+</div>
+</div>
+</div>
+<div class="cell code" data-execution_count="82">
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prepare_offer_info_tranx(df):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cleans dataframe for further analysis based on transactions within the validity period</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co">    INPUT:</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co">    df - the dataframe to be cleaned</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="co">    OUTPUT:</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="co">    cleaned - the cleaned dataframe</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;&#39;&#39;</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> df.sort_values([<span class="st">&#39;customer_id&#39;</span>,<span class="st">&#39;time&#39;</span>])</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate remaining time for offers</span></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;duration_hrs&#39;</span>] <span class="op">=</span> cleaned.duration <span class="op">*</span> <span class="dv">24</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If offer received then add duration_hrs to time, else put nan</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;end_time&#39;</span>] <span class="op">=</span> np.where(cleaned[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;offer received&#39;</span>, cleaned[<span class="st">&#39;time&#39;</span>] <span class="op">+</span> cleaned[<span class="st">&#39;duration_hrs&#39;</span>], np.nan)</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;end_time&#39;</span>] <span class="op">=</span> cleaned.groupby(<span class="st">&#39;customer_id&#39;</span>)[<span class="st">&#39;end_time&#39;</span>].ffill()</span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;remaining&#39;</span>] <span class="op">=</span> cleaned[<span class="st">&#39;end_time&#39;</span>] <span class="op">-</span> cleaned.time</span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;offer_description&#39;</span>] <span class="op">=</span> np.where((cleaned[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;transaction&#39;</span>) <span class="op">&amp;</span> (cleaned[<span class="st">&#39;remaining&#39;</span>] <span class="op">&gt;=</span> <span class="dv">0</span>), cleaned[<span class="st">&#39;offer_description&#39;</span>].ffill(), cleaned.offer_description)</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get rid of all transactions that do not belong to an offer</span></span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> cleaned[<span class="op">-</span>cleaned[<span class="st">&#39;offer_description&#39;</span>].isna()]</span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate transaction sum during offer validity period using transactions and offer viewed</span></span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> cleaned[(cleaned[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;offer viewed&#39;</span>) <span class="op">|</span> (cleaned[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;transaction&#39;</span>)]</span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a>    temp2 <span class="op">=</span> pd.DataFrame(temp.groupby([<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;offer_description&#39;</span>])[<span class="st">&#39;amount&#39;</span>].<span class="bu">sum</span>())</span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a>    temp2.rename(columns<span class="op">=</span>{<span class="st">&#39;amount&#39;</span>: <span class="st">&#39;sum&#39;</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a>    temp3 <span class="op">=</span> pd.merge(temp, temp2, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span>[<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;offer_description&#39;</span>])</span>
+<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a>    temp3[<span class="st">&#39;amount&#39;</span>] <span class="op">=</span> np.where(temp3[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;offer viewed&#39;</span>, temp3[<span class="st">&#39;sum&#39;</span>], temp3[<span class="st">&#39;amount&#39;</span>])</span>
+<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> cleaned[cleaned[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;offer received&#39;</span>].append(temp3).sort_values([<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;time&#39;</span>])</span>
+<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> cleaned.drop(columns<span class="op">=</span>[<span class="st">&#39;duration_hrs&#39;</span>, <span class="st">&#39;end_time&#39;</span>, <span class="st">&#39;remaining&#39;</span>, <span class="st">&#39;sum&#39;</span>])</span>
+<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Transfer transaction sum to &#39;offer received&#39; rows</span></span>
+<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> cleaned[<span class="op">-</span>(cleaned[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;transaction&#39;</span>)]</span>
+<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;amount&#39;</span>] <span class="op">=</span> cleaned.groupby([<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;offer_description&#39;</span>])[<span class="st">&#39;amount&#39;</span>].shift(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb34-39"><a href="#cb34-39" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> cleaned[cleaned[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> <span class="st">&#39;offer received&#39;</span>]</span>
+<span id="cb34-40"><a href="#cb34-40" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;amount&#39;</span>] <span class="op">=</span> cleaned[<span class="st">&#39;amount&#39;</span>].fillna(<span class="dv">0</span>)</span>
+<span id="cb34-41"><a href="#cb34-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-42"><a href="#cb34-42" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add success indicator</span></span>
+<span id="cb34-43"><a href="#cb34-43" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;success&#39;</span>] <span class="op">=</span> np.where(cleaned[<span class="st">&#39;amount&#39;</span>] <span class="op">&gt;</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb34-44"><a href="#cb34-44" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;unviewed_success&#39;</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">99</span></span>
+<span id="cb34-45"><a href="#cb34-45" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;failure&#39;</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">99</span></span>
+<span id="cb34-46"><a href="#cb34-46" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;outcome&#39;</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">99</span></span>
+<span id="cb34-47"><a href="#cb34-47" aria-hidden="true" tabindex="-1"></a>    cleaned[<span class="st">&#39;outcome_factor&#39;</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">99</span></span>
+<span id="cb34-48"><a href="#cb34-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-49"><a href="#cb34-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add customer information</span></span>
+<span id="cb34-50"><a href="#cb34-50" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> pd.merge(cleaned, profile, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&#39;customer_id&#39;</span>)</span>
+<span id="cb34-51"><a href="#cb34-51" aria-hidden="true" tabindex="-1"></a>    cleaned.drop([<span class="st">&#39;event&#39;</span>, <span class="st">&#39;became_member_on&#39;</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb34-52"><a href="#cb34-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-53"><a href="#cb34-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cleaned</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="83">
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a new dataframe for &#39;informational&#39; offers and transactions</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>info_df <span class="op">=</span> merged_data[(merged_data[<span class="st">&#39;offer_type&#39;</span>]<span class="op">==</span><span class="st">&#39;informational&#39;</span>) <span class="op">|</span>(merged_data[<span class="st">&#39;event&#39;</span>]<span class="op">==</span><span class="st">&#39;transaction&#39;</span>)]</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cleaning the &#39;informational&#39; dataframe by calling the function &#39;prepare_offer_info_tranx&#39;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>info_cleaned <span class="op">=</span> prepare_offer_info_tranx(info_df)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co"># displaying the first 5 rows of the cleaned dataframe</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>info_cleaned.head(<span class="dv">5</span>)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="83">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>customer_id</th>
+      <th>time</th>
+      <th>amount</th>
+      <th>offer_id</th>
+      <th>num_offers</th>
+      <th>offer completed</th>
+      <th>offer received</th>
+      <th>offer viewed</th>
+      <th>transaction</th>
+      <th>reward</th>
+      <th>...</th>
+      <th>informational</th>
+      <th>success</th>
+      <th>unviewed_success</th>
+      <th>failure</th>
+      <th>outcome</th>
+      <th>outcome_factor</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>income</th>
+      <th>membership_duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0009655768c64bdeb2e877511632db8f</td>
+      <td>168</td>
+      <td>22.16</td>
+      <td>5a8bc65990b245e5a138643cd4eb9837</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>M</td>
+      <td>33</td>
+      <td>72000.0</td>
+      <td>2154</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0009655768c64bdeb2e877511632db8f</td>
+      <td>336</td>
+      <td>8.57</td>
+      <td>3f207df678b143eea3cee63160fa8bed</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>M</td>
+      <td>33</td>
+      <td>72000.0</td>
+      <td>2154</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0011e0d4e6b944f998e987f904e8c1e5</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>3f207df678b143eea3cee63160fa8bed</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>O</td>
+      <td>40</td>
+      <td>57000.0</td>
+      <td>1891</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0011e0d4e6b944f998e987f904e8c1e5</td>
+      <td>336</td>
+      <td>0.00</td>
+      <td>5a8bc65990b245e5a138643cd4eb9837</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>O</td>
+      <td>40</td>
+      <td>57000.0</td>
+      <td>1891</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0020c2b971eb4e9188eac86d93036a77</td>
+      <td>504</td>
+      <td>51.10</td>
+      <td>5a8bc65990b245e5a138643cd4eb9837</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>-99</td>
+      <td>F</td>
+      <td>59</td>
+      <td>90000.0</td>
+      <td>2567</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 30 columns</p>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>Now that the data for all offer types has been cleaned and enriched by a binary measure for offer success, it can be merged into one dataset. This dataset will be used to build the classification model.</p>
+</div>
+<div class="cell code" data-execution_count="84">
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new dataframe for testing by dropping the &#39;amount&#39; column</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>info_test <span class="op">=</span> info_cleaned.drop(columns<span class="op">=</span>[<span class="st">&#39;amount&#39;</span>])</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># combine the cleaned BOGO and discount offers with the cleaned info_test dataframe</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> bogo_discount.append(info_test)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># display the first few rows of the combined dataframe</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>df_final.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="84">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>customer_id</th>
+      <th>time</th>
+      <th>offer_id</th>
+      <th>num_offers</th>
+      <th>success</th>
+      <th>unviewed_success</th>
+      <th>failure</th>
+      <th>outcome</th>
+      <th>outcome_factor</th>
+      <th>reward</th>
+      <th>...</th>
+      <th>discount</th>
+      <th>informational</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>income</th>
+      <th>membership_duration</th>
+      <th>offer completed</th>
+      <th>offer received</th>
+      <th>offer viewed</th>
+      <th>transaction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0009655768c64bdeb2e877511632db8f</td>
+      <td>408</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>unviewed success</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>M</td>
+      <td>33</td>
+      <td>72000.0</td>
+      <td>2154</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0011e0d4e6b944f998e987f904e8c1e5</td>
+      <td>504</td>
+      <td>9b98b8c7a33c4b65b9aebfe6a799e6d9</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>success</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>O</td>
+      <td>40</td>
+      <td>57000.0</td>
+      <td>1891</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0020c2b971eb4e9188eac86d93036a77</td>
+      <td>168</td>
+      <td>ae264e3637204a6fb9bb56bc8210ddfd</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>failure</td>
+      <td>0</td>
+      <td>10.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>F</td>
+      <td>59</td>
+      <td>90000.0</td>
+      <td>2567</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0020c2b971eb4e9188eac86d93036a77</td>
+      <td>408</td>
+      <td>4d5c57ea9a6940dd891ad53e9dbe8da0</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>success</td>
+      <td>2</td>
+      <td>10.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>F</td>
+      <td>59</td>
+      <td>90000.0</td>
+      <td>2567</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0020ccbbb6d84e358d3414a3ff76cffd</td>
+      <td>336</td>
+      <td>f19421c1d4aa40978ebb69ca19b0e20d</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>success</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>F</td>
+      <td>24</td>
+      <td>60000.0</td>
+      <td>2315</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 29 columns</p>
+</div>
+</div>
+</div>
+<div class="cell code" data-execution_count="85">
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace missing values with 0 in df_final</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> df_final.fillna(<span class="dv">0</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display information about df_final</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>df_final.info()</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 66501 entries, 0 to 13299
+Data columns (total 29 columns):
+ #   Column               Non-Null Count  Dtype  
+---  ------               --------------  -----  
+ 0   customer_id          66501 non-null  object 
+ 1   time                 66501 non-null  int64  
+ 2   offer_id             66501 non-null  object 
+ 3   num_offers           66501 non-null  float64
+ 4   success              66501 non-null  int64  
+ 5   unviewed_success     66501 non-null  int64  
+ 6   failure              66501 non-null  int64  
+ 7   outcome              66501 non-null  object 
+ 8   outcome_factor       66501 non-null  int64  
+ 9   reward               66501 non-null  float64
+ 10  difficulty           66501 non-null  float64
+ 11  duration             66501 non-null  float64
+ 12  offer_type           66501 non-null  object 
+ 13  email                66501 non-null  float64
+ 14  mobile               66501 non-null  float64
+ 15  social               66501 non-null  float64
+ 16  web                  66501 non-null  float64
+ 17  offer_description    66501 non-null  object 
+ 18  bogo                 66501 non-null  float64
+ 19  discount             66501 non-null  float64
+ 20  informational        66501 non-null  float64
+ 21  gender               66501 non-null  object 
+ 22  age                  66501 non-null  int64  
+ 23  income               66501 non-null  float64
+ 24  membership_duration  66501 non-null  int64  
+ 25  offer completed      66501 non-null  float64
+ 26  offer received       66501 non-null  float64
+ 27  offer viewed         66501 non-null  float64
+ 28  transaction          66501 non-null  float64
+dtypes: float64(16), int64(7), object(6)
+memory usage: 15.2+ MB
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="86">
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print total counts of different events for BOGO offer</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;The total counts of different events for BOGO offer is:&#39;</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bogo.event.value_counts())</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print total counts of different events for discount offer</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">The total counts of different events for discount offer is:&#39;</span>)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(discount.event.value_counts())</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>The total counts of different events for BOGO offer is:
+offer received     26537
+offer viewed       22039
+offer completed    15258
+Name: event, dtype: int64
+
+
+The total counts of different events for discount offer is:
+offer received     26664
+offer viewed       18461
+offer completed    17186
+Name: event, dtype: int64
+</code></pre>
+</div>
+</div>
+<div class="cell markdown">
+<p>Let's create a graph to analyze the total count of BOGO offers versus discount offers.</p>
+</div>
+<div class="cell code" data-execution_count="87">
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot a countplot to compare the total counts of BOGO and discount offers</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">8</span>))</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use seaborn countplot to visualize the data</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">&quot;offer_type&quot;</span>, hue<span class="op">=</span><span class="st">&quot;event&quot;</span>, data<span class="op">=</span>bogo_discount_notcleaned)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># add title to the plot</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Total counts of BOGO offer vs. discount offer</span><span class="ch">\n</span><span class="st">&quot;</span>, fontsize<span class="op">=</span><span class="dv">16</span>)<span class="op">;</span></span></code></pre></div>
+<div class="output display_data">
+<p><img src="7b4c4eaf7d0609f9e1e6ace5ef55729f060df53b.png" /></p>
+</div>
+</div>
+<div class="cell code" data-execution_count="88">
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> event_counts(df):</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns the counts of each individual event</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co">    INPUT:</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co">    df - dataframe</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co">    OUTPUT:</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="co">    counts - counts of each individual event</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>    events <span class="op">=</span> df[<span class="st">&#39;event&#39;</span>].unique()</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    counts <span class="op">=</span> []</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> event <span class="kw">in</span> events:</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>        count <span class="op">=</span> <span class="bu">len</span>(df[df[<span class="st">&#39;event&#39;</span>] <span class="op">==</span> event])</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> count</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="89">
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get event counts for BOGO offer</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>bogo_received, bogo_viewed, bogo_completed <span class="op">=</span> event_counts(bogo)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Get event counts for discount offer</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>discount_received, discount_viewed, discount_completed <span class="op">=</span> event_counts(discount)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create lists of performance percentages for BOGO and discount offers</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">&#39;completed/received&#39;</span>, <span class="st">&#39;viewed/received&#39;</span>, <span class="st">&#39;completed/viewed&#39;</span>]</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>bogo_performance <span class="op">=</span> [bogo_completed<span class="op">/</span>bogo_received, bogo_viewed<span class="op">/</span>bogo_received, bogo_completed<span class="op">/</span>bogo_viewed]</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>discount_performance <span class="op">=</span> [discount_completed<span class="op">/</span>discount_received, discount_viewed<span class="op">/</span>discount_received, discount_completed<span class="op">/</span>discount_viewed]</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up plot</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="bu">len</span>(labels))</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> <span class="fl">0.35</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">6</span>))</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create bars for BOGO and discount offers</span></span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>rects1 <span class="op">=</span> ax.bar(x <span class="op">-</span> width<span class="op">/</span><span class="dv">2</span>, bogo_performance, width, label<span class="op">=</span><span class="st">&#39;BOGO&#39;</span>)</span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>rects2 <span class="op">=</span> ax.bar(x <span class="op">+</span> width<span class="op">/</span><span class="dv">2</span>, discount_performance, width, label<span class="op">=</span><span class="st">&#39;discount&#39;</span>)</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and legend</span></span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;Percentage&#39;</span>)</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Comparing the performance of BOGO and discount offers</span><span class="ch">\n</span><span class="st">&#39;</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(x)</span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(labels)</span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels to the bars</span></span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> autolabel(rects):</span>
+<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> rect <span class="kw">in</span> rects:</span>
+<span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a>        height <span class="op">=</span> rect.get_height()</span>
+<span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a>        ax.annotate(<span class="st">&#39;</span><span class="sc">{}</span><span class="st">%&#39;</span>.<span class="bu">format</span>(<span class="bu">round</span>(height<span class="op">*</span><span class="dv">100</span>, <span class="dv">2</span>)),</span>
+<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>                    xy<span class="op">=</span>(rect.get_x() <span class="op">+</span> rect.get_width() <span class="op">/</span> <span class="dv">2</span>, height),</span>
+<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>                    xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">3</span>),</span>
+<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a>                    textcoords<span class="op">=</span><span class="st">&quot;offset points&quot;</span>,</span>
+<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a>                    ha<span class="op">=</span><span class="st">&#39;center&#39;</span>, va<span class="op">=</span><span class="st">&#39;bottom&#39;</span>)</span>
+<span id="cb43-37"><a href="#cb43-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-38"><a href="#cb43-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Call autolabel function on each bar</span></span>
+<span id="cb43-39"><a href="#cb43-39" aria-hidden="true" tabindex="-1"></a>autolabel(rects1)</span>
+<span id="cb43-40"><a href="#cb43-40" aria-hidden="true" tabindex="-1"></a>autolabel(rects2)</span>
+<span id="cb43-41"><a href="#cb43-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-42"><a href="#cb43-42" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb43-43"><a href="#cb43-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-44"><a href="#cb43-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img src="a64a1c065ebf9d531e455f04c3cbe2de4ea3683b.png" /></p>
+</div>
+</div>
+<div class="cell markdown">
+<p>The discount offer appears to be more successful compared to BOGO because it has not only slightly higher absolute numbers of 'offer completed' but also a higher overall completed/received rate of around 7%. On the other hand, BOGO offers have a better chance of being viewed by customers. However, it's easier to turn offer received to offer completed with a discount offer than a BOGO offer.</p>
+<p>Additionally, we can examine offers that follow the successful offer path of 'offer received → offer viewed → transaction(s) → offer completed'.</p>
+</div>
+<div class="cell code" data-execution_count="90">
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(df_final.groupby([<span class="st">&#39;offer_description&#39;</span>])[<span class="st">&#39;success&#39;</span>].mean()).reset_index().sort_values(<span class="st">&#39;success&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="90">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>offer_description</th>
+      <th>success</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>discount_offer_spend_10_get_2_valid_for_10days</td>
+      <td>0.691371</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>discount_offer_spend_7_get_3_valid_for_7days</td>
+      <td>0.665214</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>informational_offer_spend_0_get_0_valid_for_3days</td>
+      <td>0.640373</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>bogo_offer_spend_5_get_5_valid_for_5days</td>
+      <td>0.563108</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>bogo_offer_spend_10_get_10_valid_for_5days</td>
+      <td>0.457455</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>bogo_offer_spend_10_get_10_valid_for_7days</td>
+      <td>0.435583</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>informational_offer_spend_0_get_0_valid_for_4days</td>
+      <td>0.382605</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bogo_offer_spend_5_get_5_valid_for_7days</td>
+      <td>0.374869</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>discount_offer_spend_10_get_2_valid_for_7days</td>
+      <td>0.367667</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>discount_offer_spend_20_get_5_valid_for_10days</td>
+      <td>0.243533</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell markdown">
+<p>The results indicate that the discount offers have a higher success rate compared to the BOGO offers.</p>
+</div>
+<section id="-model-building--evaluation" class="cell markdown">
+<h2>### Model Building &amp; Evaluation</h2>
+</section>
+<div class="cell markdown">
+<p>The next step is to develop a machine learning model that can predict offer success by utilizing offer and customer characteristics. The metrics that will be used to evaluate the model's performance are accuracy_score and roc_auc_score.</p>
+</div>
+<div class="cell code" data-execution_count="91">
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop rows with missing values</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> df_final.dropna(how<span class="op">=</span><span class="st">&#39;any&#39;</span>, axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create dummy variables for gender</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> pd.get_dummies(df_final.gender)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> pd.concat([df_final, gender], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="co"># define features (X) and target (y) variables</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df_final.drop(columns<span class="op">=</span>[<span class="st">&#39;customer_id&#39;</span>, <span class="st">&#39;offer_id&#39;</span>, <span class="st">&#39;time&#39;</span>, <span class="st">&#39;offer_type&#39;</span>, <span class="st">&#39;gender&#39;</span>,<span class="st">&#39;offer_description&#39;</span>,<span class="st">&#39;success&#39;</span>, <span class="st">&#39;unviewed_success&#39;</span>, <span class="st">&#39;failure&#39;</span>, <span class="st">&#39;outcome&#39;</span>, <span class="st">&#39;outcome_factor&#39;</span>,<span class="st">&#39;offer completed&#39;</span>,<span class="st">&#39;offer received&#39;</span>,<span class="st">&#39;offer viewed&#39;</span>,<span class="st">&#39;transaction&#39;</span>])</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_final[<span class="st">&#39;success&#39;</span>]</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="co"># split data into training and testing sets</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;X_train shape:&quot;</span>, X_train.shape)</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;X_test shape:&quot;</span>, X_test.shape)</span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;y_train shape:&quot;</span>, y_train.shape)</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;y_test shape:&quot;</span>, y_test.shape)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>X_train shape: (53200, 17)
+X_test shape: (13301, 17)
+y_train shape: (53200,)
+y_test shape: (13301,)
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="37">
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pipeline with StandardScaler and the classifier</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> Pipeline([</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&#39;scaler&#39;</span>, StandardScaler()),</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">&#39;model&#39;</span>, <span class="va">None</span>)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the parameter grid for each model</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>param_grid <span class="op">=</span> [</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random Forest</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model&#39;</span>: [RandomForestClassifier()],</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__n_estimators&#39;</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">500</span>],</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__max_depth&#39;</span>: [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>],</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__min_samples_split&#39;</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>],</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__min_samples_leaf&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__bootstrap&#39;</span>: [<span class="va">True</span>, <span class="va">False</span>],</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__random_state&#39;</span>: [<span class="dv">42</span>]</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gradient Boosting</span></span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model&#39;</span>: [GradientBoostingClassifier()],</span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__n_estimators&#39;</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">500</span>],</span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__learning_rate&#39;</span>: [<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>],</span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__max_depth&#39;</span>: [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">10</span>],</span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__min_samples_split&#39;</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>],</span>
+<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__min_samples_leaf&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__random_state&#39;</span>: [<span class="dv">42</span>]</span>
+<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># AdaBoost</span></span>
+<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model&#39;</span>: [AdaBoostClassifier()],</span>
+<span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__n_estimators&#39;</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">500</span>],</span>
+<span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__learning_rate&#39;</span>: [<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>],</span>
+<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__algorithm&#39;</span>: [<span class="st">&#39;SAMME.R&#39;</span>,<span class="st">&#39;SAMME&#39;</span>],</span>
+<span id="cb47-35"><a href="#cb47-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__random_state&#39;</span>: [<span class="dv">42</span>]</span>
+<span id="cb47-36"><a href="#cb47-36" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb47-37"><a href="#cb47-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Logistic Regression</span></span>
+<span id="cb47-38"><a href="#cb47-38" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb47-39"><a href="#cb47-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model&#39;</span>: [LogisticRegression()],</span>
+<span id="cb47-40"><a href="#cb47-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__C&#39;</span>: [<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="dv">10</span>],</span>
+<span id="cb47-41"><a href="#cb47-41" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__penalty&#39;</span>: [<span class="st">&#39;l1&#39;</span>, <span class="st">&#39;l2&#39;</span>],</span>
+<span id="cb47-42"><a href="#cb47-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__solver&#39;</span>: [<span class="st">&#39;liblinear&#39;</span>],</span>
+<span id="cb47-43"><a href="#cb47-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model__random_state&#39;</span>: [<span class="dv">42</span>]</span>
+<span id="cb47-44"><a href="#cb47-44" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb47-45"><a href="#cb47-45" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="39">
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create the GridSearchCV object with verbose=True</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>grid_search <span class="op">=</span> GridSearchCV(pipeline, param_grid<span class="op">=</span>param_grid, scoring<span class="op">=</span><span class="st">&#39;roc_auc&#39;</span>, cv<span class="op">=</span><span class="dv">3</span>, verbose<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># fit method </span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>grid_search.fit(X_train, y_train)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Fitting 3 folds for each of 429 candidates, totalling 1287 fits
+</code></pre>
+</div>
+<div class="output execute_result" data-execution_count="39">
+<pre><code>GridSearchCV(cv=3,
+             estimator=Pipeline(steps=[(&#39;scaler&#39;, StandardScaler()),
+                                       (&#39;model&#39;, None)]),
+             param_grid=[{&#39;model&#39;: [RandomForestClassifier()],
+                          &#39;model__bootstrap&#39;: [True, False],
+                          &#39;model__max_depth&#39;: [5, 10, 20],
+                          &#39;model__min_samples_leaf&#39;: [1, 2, 4],
+                          &#39;model__min_samples_split&#39;: [2, 5, 10],
+                          &#39;model__n_estimators&#39;: [50, 100, 500],
+                          &#39;model__random_state&#39;: [42]},
+                         {&#39;model&#39;: [GradientB...
+                          &#39;model__random_state&#39;: [42]},
+                         {&#39;model&#39;: [AdaBoostClassifier()],
+                          &#39;model__algorithm&#39;: [&#39;SAMME.R&#39;, &#39;SAMME&#39;],
+                          &#39;model__learning_rate&#39;: [0.1, 0.5, 1],
+                          &#39;model__n_estimators&#39;: [50, 100, 500],
+                          &#39;model__random_state&#39;: [42]},
+                         {&#39;model&#39;: [LogisticRegression()],
+                          &#39;model__C&#39;: [0.1, 1, 10],
+                          &#39;model__penalty&#39;: [&#39;l1&#39;, &#39;l2&#39;],
+                          &#39;model__random_state&#39;: [42],
+                          &#39;model__solver&#39;: [&#39;liblinear&#39;]}],
+             scoring=&#39;roc_auc&#39;, verbose=1)</code></pre>
+</div>
+</div>
+<div class="cell code">
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the best model and its parameters</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>best_model <span class="op">=</span> grid_search.best_estimator_</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>best_params <span class="op">=</span> grid_search.best_params_</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the best model and its parameters</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Best model: &quot;</span>, best_model)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Best parameters: &quot;</span>, best_params)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Best model:  Pipeline(steps=[(&#39;scaler&#39;, StandardScaler()),
+                (&#39;model&#39;,
+                 GradientBoostingClassifier(max_depth=10, min_samples_leaf=2,
+                                            min_samples_split=10,
+                                            random_state=42))])
+Best parameters:  {&#39;model&#39;: GradientBoostingClassifier(max_depth=10, min_samples_leaf=2,
+                           min_samples_split=10, random_state=42), &#39;model__learning_rate&#39;: 0.1, &#39;model__max_depth&#39;: 10, &#39;model__min_samples_leaf&#39;: 2, &#39;model__min_samples_split&#39;: 10, &#39;model__n_estimators&#39;: 100, &#39;model__random_state&#39;: 42}
+</code></pre>
+</div>
+</div>
+<div class="cell code">
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the best model with the test dataset and get the accuracy and roc_auc score</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> best_model.predict(X_test)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>acc <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>roc_auc <span class="op">=</span> roc_auc_score(y_test, y_pred)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Accuracy: &quot;</span>, acc)</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;ROC AUC score: &quot;</span>, roc_auc)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Accuracy:  0.7106232614089166
+ROC AUC score:  0.7098017318790754
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="48">
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display classification report using target names for y_test and model_predictions</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred, target_names<span class="op">=</span>[<span class="st">&#39;failure&#39;</span>, <span class="st">&#39;success&#39;</span>]))</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>              precision    recall  f1-score   support
+
+     failure       0.72      0.73      0.73      6995
+     success       0.70      0.69      0.69      6306
+
+    accuracy                           0.71     13301
+   macro avg       0.71      0.71      0.71     13301
+weighted avg       0.71      0.71      0.71     13301
+
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="92">
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># training best model after gridsearch execution</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>grid_best_model <span class="op">=</span> GradientBoostingClassifier(max_depth<span class="op">=</span><span class="dv">10</span>, min_samples_leaf<span class="op">=</span><span class="dv">2</span>,min_samples_split<span class="op">=</span><span class="dv">10</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>grid_best_model.fit(X_train, y_train)    </span></code></pre></div>
+<div class="output execute_result" data-execution_count="92">
+<pre><code>GradientBoostingClassifier(max_depth=10, min_samples_leaf=2,
+                           min_samples_split=10, random_state=42)</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="93">
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>feat_imp <span class="op">=</span> pd.DataFrame(grid_best_model.feature_importances_, index<span class="op">=</span>X.columns, columns<span class="op">=</span>[<span class="st">&#39;importance&#39;</span>]).sort_values(<span class="st">&#39;importance&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>).reset_index()</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>feat_imp.rename(columns<span class="op">=</span>{<span class="st">&#39;index&#39;</span>:<span class="st">&#39;feature&#39;</span>},inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>feat_imp.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="93">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>feature</th>
+      <th>importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>membership_duration</td>
+      <td>0.350805</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>income</td>
+      <td>0.183660</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>age</td>
+      <td>0.157774</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>social</td>
+      <td>0.109451</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>reward</td>
+      <td>0.050270</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell code" data-execution_count="100">
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot using Seaborn&#39;s catplot function</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> sns.catplot(data<span class="op">=</span>feat_imp.reset_index(), y<span class="op">=</span><span class="st">&#39;feature&#39;</span>, x<span class="op">=</span><span class="st">&#39;importance&#39;</span>, kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>, aspect<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the plot title</span></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>plot.<span class="bu">set</span>(title<span class="op">=</span><span class="st">&#39;Feature importance&#39;</span>)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the y-axis label</span></span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>plot.<span class="bu">set</span>(ylabel<span class="op">=</span><span class="st">&#39;Feature&#39;</span>)</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the x-axis label</span></span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>plot.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">&#39;Importance&#39;</span>)</span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img src="13a6193d1f952c28debf161fb29da55de74c55ce.png" /></p>
+</div>
+</div>
+<div class="cell markdown">
+<p>According to my model, the factors that have the highest impact are membership duration, income and age.</p>
+</div>
+<div class="cell code" data-execution_count="95">
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean income for each success category in the df_final dataframe</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>income_by_success <span class="op">=</span> df_final.groupby(<span class="st">&#39;success&#39;</span>)[<span class="st">&#39;income&#39;</span>].mean()</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the results</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>income_by_success</span></code></pre></div>
+<div class="output execute_result" data-execution_count="95">
+<pre><code>success
+0    63151.442168
+1    67759.699117
+Name: income, dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell markdown">
+<p>Offers are more likely to be successful for members with higher incomes.</p>
+</div>
+<div class="cell code" data-execution_count="102">
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean success rate for each channel in the df_final dataframe</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>df_final.groupby([<span class="st">&#39;social&#39;</span>])[<span class="st">&#39;success&#39;</span>].mean()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="102">
+<pre><code>social
+0.0    0.341923
+1.0    0.575599
+Name: success, dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="103">
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>df_final.groupby([<span class="st">&#39;web&#39;</span>])[<span class="st">&#39;success&#39;</span>].mean()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="103">
+<pre><code>web
+0.0    0.537671
+1.0    0.467776
+Name: success, dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="104">
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>df_final.groupby([<span class="st">&#39;mobile&#39;</span>])[<span class="st">&#39;success&#39;</span>].mean()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="104">
+<pre><code>mobile
+0.0    0.243533
+1.0    0.508591
+Name: success, dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="105">
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>df_final.groupby([<span class="st">&#39;email&#39;</span>])[<span class="st">&#39;success&#39;</span>].mean()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="105">
+<pre><code>email
+1.0    0.481782
+Name: success, dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell markdown">
+<p>Offers are more likely to be successful when they are sent out via the 'social' channel.</p>
+</div>
+<section id="-conclusion" class="cell markdown">
+<h2>### Conclusion</h2>
+<p>The goal of this project was to build a machine learning model that predicts offer success based on demographic and offer details provided in the data. We built a simple classification model using several algorithms such as random forest, gradient boosting, AdaBoost, and logistic regression, and found that the Gradient Boosting classifier had the highest accuracy for this task.</p>
+<p>The final model has an accuracy of 71%, which is a good number for business purposes, although there is still room for improvement.</p>
+<p>We identified that membership duration, income, and age were the most relevant factors for offer success based on the model.</p>
+<p>We also answered the following questions in the process of building the model:</p>
+<ul>
+<li>Which offer is the most successful?</li>
+</ul>
+<p>We found that the discount offer was more successful than the BOGO offer because it had a higher overall completed/received rate and a slightly higher absolute number of completed offers. However, the BOGO offer had a greater chance of being viewed or seen by customers.</p>
+<ul>
+<li>Who spends more money, male or female?</li>
+</ul>
+<p>Based on the graph data, we found that female customers spend more money than male customers. This insight can help Starbucks in targeting their customers more effectively.</p>
+<p>Future scope of this project includes exploring better modeling techniques and algorithms to improve the model's performance. We also plan to use an imputation strategy for missing values to see if the model can be improved in this way. Overall, the results of this project can help Starbucks optimize their marketing campaigns and improve offer success rates.</p>
+</section>
+<div class="cell code">
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+</div>
+</body>
+</html>

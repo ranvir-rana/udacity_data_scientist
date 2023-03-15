@@ -20,9 +20,8 @@ The motivation behind this project is to help Starbucks improve their mobile app
 Additionally, the project can help Starbucks identify the most effective offer types and the demographic groups that are most likely to complete them. The findings can help Starbucks make informed decisions on how to allocate their marketing budgets and create targeted campaigns that resonate with each customer group.
 
 The project will also answer the following questions:
-
-	1. Which offer is the most successful?
-	2. Do males or females spend more money?
+-	Which offer is the most successful?
+-	Do males or females spend more money?
 	
 
 ### File Description
@@ -72,7 +71,7 @@ This will open the iPython Notebook software and project file in your browser.
 
 The data used in this project is contained in three files: portfolio.json, profile.json, and transcript.json. These files can be found in the workspace.
 
-* portfolio.json
+1. portfolio.json
 
 -	id (string) - offer id
 -	offer_type (string) - type of offer, i.e., BOGO, discount, informational
@@ -81,7 +80,7 @@ The data used in this project is contained in three files: portfolio.json, profi
 -	duration (int) - time for the offer to be open, in days
 -	channels (list of strings) - channels used to send the offer
 
-* profile.json
+2. profile.json
 
 -	age (int) - age of the customer
 -	became_member_on (int) - date when the customer created an app account
@@ -89,7 +88,7 @@ The data used in this project is contained in three files: portfolio.json, profi
 -	id (str) - customer id
 -	income (float) - customer's income
 
-* transcript.json
+3. transcript.json
 
 -	event (str) - record description (i.e., transaction, offer received, offer viewed, etc.)
 -	person (str) - customer id

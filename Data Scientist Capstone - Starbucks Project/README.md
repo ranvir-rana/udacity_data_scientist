@@ -1,105 +1,126 @@
-# Disaster Response Pipeline Project (Udacity - Data Science Nanodegree)
+# Starbucks Capstone Challenge (Udacity - Data Science Nanodegree)
 
 ## Table of Contents
 1. [Description](#description)
-2. [Getting Started](#getting_started)
-	1. [Dependencies](#dependencies)
-	2. [Installation](#installation)
-	3. [Execution](#execution)
-	4. [Additional Material](#material)
-3. [Authors](#authors)
-4. [License](#license)
-5. [Acknowledgement](#acknowledgement)
+2. [Installations](#installations)
+3. [Run](#run)
+4. [Data](#data)
+5. [Conclusion](#conclusion)
+6. [Licensing, Authors, Acknowledgements](#acknowledgement)
 
 <a name="descripton"></a>
 ## Description
 
-This project is a part of the Data Science Nanodegree program by Udacity in collaboration with Figure Eight. The aim is to develop a Natural Language Processing (NLP) model that can classify messages from real-life disaster events in real-time. The dataset contains pre-labelled tweets and messages.
+The Udacity Data Science Nanodegree requires completion of a Capstone project which utilizes simulated data to mimic customer behavior on the Starbucks rewards mobile app. Starbucks sends out offers to users of the mobile app, which can be an advertisement or an actual offer such as a discount or BOGO. The data includes information on offers, customer demographics, and offer and transaction events.
 
-The project is broken down into three key sections:
+The project goal is to use this data to classify whether an offer is likely to be successful based on demographic and offer information. This will be achieved by building a machine learning model that predicts offer success using demographic information and offer details from the data.
 
-	1. Data processing, where an ETL pipeline is built to extract, clean, and store data in a SQLite database.
-	2. Building a machine learning pipeline to train a model capable of classifying text messages into various categories.
-	3. Developing a web application that displays the model's results in real-time.
+The motivation behind this project is to help Starbucks improve their mobile app's offer personalization to increase customer engagement and loyalty. By identifying which demographic groups respond best to which offer types, Starbucks can tailor their offers to each customer segment, thereby enhancing customer satisfaction and retention.
+
+Additionally, the project can help Starbucks identify the most effective offer types and the demographic groups that are most likely to complete them. The findings can help Starbucks make informed decisions on how to allocate their marketing budgets and create targeted campaigns that resonate with each customer group.
+
+The project will also answer the following questions:
+
+	1. Which offer is the most successful?
+	2. Do males or females spend more money?
 	
-This project is significant as it aims to assist disaster relief agencies in effectively responding to emergency situations. By providing a machine learning model that can classify disaster messages and direct them to the appropriate agency, this project can streamline the process of getting the right information to the right people quickly, which can save lives and reduce the impact of natural disasters on communities. Additionally, by providing data visualizations in the web app, the project can also help relief agencies gain valuable insights into the types and frequency of disasters that are occurring, which can inform their response strategies and improve their overall effectiveness. Overall, this application has the potential to make a meaningful impact on communities by helping disaster relief agencies respond more quickly and effectively to emergency situations.
-
 
 ### File Description
 ~~~~~~~
-        Project 2 - Disaster Response Pipeline
-          |-- app
-                |-- templates
-                        |-- go.html		# classification result page of web app
-                        |-- master.html		# main page of web app
-                |-- run.py			# Flask file that runs app
+        Data Scientist Capstone - Starbucks Project
           |-- data
-                |-- disaster_message.csv	# data to process
-                |-- disaster_categories.csv	# data to process
-                |-- DisasterResponse.db		# database to save clean data to
-                |-- process_data.py
-          |-- models
-                |-- classifier.pkl		# saved model
-                |-- train_classifier.py
+                |-- portfolio.json	# containing offer ids and meta data about each offe
+                |-- profile.json	# demographic data for each customer
+                |-- transcript.json		# records for transactions, offers received, offers viewed, and offers completed
+          |-- Starbucks_Capstone_notebook.ipynb			# code file
           |-- README
 ~~~~~~~
 
-<a name="getting_started"></a>
-## Getting Started
+<a name="installations"></a>
+## Installations
 
-<a name="dependencies"></a>
-### Dependencies
+This project requires **Python 3.x** and the following Python libraries installed:
 
-* Python 3.5+
-* NumPy, SciPy, Pandas, Scikit-Learn for Machine Learning
-* NLTK for Natural Language Processing
-* SQLalchemy for SQLlite Database
-* Pickle for Model Loading and Saving
-* Flask, Plotly for Web App and Data Visualization
+- scikit-learn
+- pandas
+- numpy
+- matplotlib
+- seaborn
 
-<a name="installation"></a>
-### Installation
+You will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html)
 
-To clone the git repository:
+install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project.
+
+
+<a name="run"></a>
+### Run
+
+In a terminal or command window, navigate to the top-level project directory `Data Scientist Capstone - Starbucks Project/` (that contains this README) and run one of the following commands:
+
+```bash
+ipython notebook Starbucks_Capstone_notebook.ipynb
+```  
+or
+```bash
+jupyter Starbucks_Capstone_notebook.ipynb
 ```
-git clone https://github.com/ranvir-rana/udacity_data_scientist.git
-```
 
-<a name="execution"></a>
-### Execution
+This will open the iPython Notebook software and project file in your browser.
 
-1. Run the following commands in the project's directory to set up the database, train model and save the model.
+<a name="data"></a>
+### Data
 
-    - To run ETL pipeline for data cleaning and storing data in the database:
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-    - To run the ML pipeline that loads data from DB, trains classifier and saves the classifier as a pickle file:
-        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
-        
-2. Run the following command in the app's directory to run the web app:
-    `python run.py`
+The data used in this project is contained in three files: portfolio.json, profile.json, and transcript.json. These files can be found in the workspace.
 
-3. Go to http://0.0.0.0:3001/
+* portfolio.json
 
-<a name="material"></a>
-### Additional Material
+-	id (string) - offer id
+-	offer_type (string) - type of offer, i.e., BOGO, discount, informational
+-	difficulty (int) - minimum required spend to complete an offer
+-	reward (int) - reward given for completing an offer
+-	duration (int) - time for the offer to be open, in days
+-	channels (list of strings) - channels used to send the offer
 
-In the data and models folder, you can find two Jupyter notebooks that will help you understand how the model works step by step:
+* profile.json
 
-    * ETL Preparation Notebook: learn about the ETL pipeline implemented
-    * ML Pipeline Preparation Notebook: examine the Machine Learning Pipeline developed with NLTK and Scikit-Learn.
+-	age (int) - age of the customer
+-	became_member_on (int) - date when the customer created an app account
+-	gender (str) - gender of the customer (note some entries contain 'O' for other rather than M or F)
+-	id (str) - customer id
+-	income (float) - customer's income
 
-<a name="authors"></a>
-## Authors
+* transcript.json
 
-* [Ranvir Rana](https://github.com/ranvir-rana)
+-	event (str) - record description (i.e., transaction, offer received, offer viewed, etc.)
+-	person (str) - customer id
+-	time (int) - time in hours since start of test. The data begins at time t=0
+-	value (dict of strings) - either an offer id or transaction amount depending on the record
 
-<a name="license"></a>
-## License
+<a name="conclusion"></a>
+## Conclusion
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+In this project, we aimed to build a machine learning model that predicts offer success based on demographic and offer details provided in the data. We used several algorithms such as random forest, gradient boosting, AdaBoost, and logistic regression to build a simple classification model. The Gradient Boosting classifier had the highest accuracy of 71% for this task.
+
+We identified membership duration, income, and age as the most relevant factors for offer success based on the model. Additionally, we answered the following questions:
+
+* Which offer is the most successful?
+
+The discount offer was found to be more successful than the BOGO offer based on a higher overall completed/received rate and a slightly higher absolute number of completed offers. However, the BOGO offer had a greater chance of being viewed or seen by customers.
+
+* Who spends more money, male or female?
+
+Female customers were found to spend more money than male customers based on the graph data.
+
+Overall, the results of this project can help Starbucks optimize their marketing campaigns and improve offer success rates. There is a future scope to explore better modeling techniques and algorithms to improve the model's performance. An imputation strategy for missing values can also be used to see if the model can be improved in this way.
+
+For more insights and a detailed analysis of the project, please refer to the blog <a href="https://medium.com/@ranvir_rana/forecasting-the-success-of-starbucks-offers-and-identifying-key-factors-for-success-43a1f4c7fc1a">link</a>.
+
 
 <a name="acknowledgement"></a>
-## Acknowledgements
+## Licensing, Authors, Acknowledgements 
 
-* [Udacity](https://www.udacity.com/) for providing an amazing Data Science Nanodegree Program
-* [Figure Eight](https://www.figure-eight.com/) for providing the relevant dataset to train the model
+* The data used in this project is provided by Starbucks.
+* I give full credit to Starbucks for providing this data and allowing us to use it for this project.
+* This project is part of the Data Scientist Nanodegree program offered by Udacity.
+* I acknowledge Udacity for providing us with the necessary skills and knowledge to complete this project successfully.
+* I thank our mentors and reviewers at Udacity for their guidance and feedback, which helped us improve our skills and complete the project successfully.

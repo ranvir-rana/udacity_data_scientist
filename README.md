@@ -6,6 +6,8 @@ Project 1: Writing a Data Scientist Blog Post
 
 Project 2: Disaster Response Pipeline
 
-Project 3: ....
+Project 3: Recommendation Engines
+
+Data Scientist Capstone: Starbucks Project
 
 

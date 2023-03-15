@@ -31,8 +31,8 @@ The project will also answer the following questions:
                 |-- portfolio.json	# containing offer ids and meta data about each offe
                 |-- profile.json	# demographic data for each customer
                 |-- transcript.json		# records for transactions, offers received, offers viewed, and offers completed
-          |-- Starbucks_Capstone_notebook.ipynb			# code file
 		  |-- Starbucks_Capstone_notebook.html			# code file in html format
+          |-- Starbucks_Capstone_notebook.ipynb			# code file  
           |-- README
 ~~~~~~~
 

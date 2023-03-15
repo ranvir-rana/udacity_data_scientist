@@ -69,7 +69,7 @@ This will open the iPython Notebook software and project file in your browser.
 <a name="data"></a>
 ### Data
 
-The data used in this project is contained in three files: portfolio.json, profile.json, and transcript.json. These files can be found in the workspace.
+The data used in this project is contained in three files: portfolio.json, profile.json, and transcript.json. These files can be found in the repository under data folder.
 
 1. portfolio.json
 
